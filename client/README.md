@@ -5,7 +5,6 @@
 * left navigation drawer
 * routing - for multiple pages
 * vuex - state managment
-* apollo client - graphql
 
 ## Project setup
 ```
