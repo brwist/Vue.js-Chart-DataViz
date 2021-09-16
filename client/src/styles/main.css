@@ -1,0 +1,50 @@
+:root{
+    --greenContent: #2ab71b;
+    --redContent: #CF0000;
+    --greyFills: #424242;
+}
+
+html, body {
+    background-color: #121212;
+}
+
+.text-red {
+    color: var(--v-secondaryDark-base) !important;
+}
+
+.text-green {
+    color: var(--v-green-base) !important;
+}
+
+.round-borders-top {
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+}
+
+.round-borders-bottom {
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.round-borders-none {
+    border-radius: 0px !important;
+}
+
+.v-list-item--active:hover::before,
+.v-list-item--active::before {
+  opacity: 0 !important;
+}
+
+.v-list-item--active .v-list-item__title {
+    color: var(--v-secondary-base);
+}
+
+.v-dialog .v-card__title,
+.popup .v-card__title {
+    padding: 16px 24px !important;
+    word-break: normal;
+}
