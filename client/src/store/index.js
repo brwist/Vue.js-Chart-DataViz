@@ -1,8 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "@/plugins/axios";
-import apolloClient from "@/plugins/apollo";
-import { LOAD_DATA } from "@/apollo/queries";
 
 Vue.use(Vuex);
 
@@ -29,19 +27,5 @@ export default new Vuex.Store({
         return data;
       });
     },
-    loadData({ commit }, commitName) {
-      return apolloClient
-        .query({
-          query: LOAD_DATA,
-          variables: {}
-        })
-        .then(({ data }) => {
-          commit(SET_DATA, data);
-        })
-        .catch((e) => {
-          console.error(e);
-          commit(SET_DATA, []);
-        });
-    }
   },
 });
