@@ -1,6 +1,6 @@
 <template>
-  <v-app v-bind:style="{ background: $vuetify.theme.themes.dark.background }">
-    <Header :tabs="tabs" :appName="'Template'" />
+  <v-app v-bind:style="{ background: $vuetify.theme.themes.light.background }">
+    <Header :tabs="tabs" :appName="'Vue App Template'" />
     <v-main>
       <router-view></router-view>
     </v-main>

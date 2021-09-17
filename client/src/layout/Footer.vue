@@ -1,5 +1,5 @@
 <template>
-  <v-footer app fixed>
+  <v-footer app fixed dark>
     <span class="caption">
       alis_ Technologies &copy; {{ new Date().getFullYear() }}
     </span>

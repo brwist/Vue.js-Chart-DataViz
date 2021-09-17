@@ -5,9 +5,8 @@
       clipped
       fixed
       app
-      dark
       disable-resize-watcher
-      color="primary"
+      color="background"
     >
       <v-list nav dense>
         <template v-for="(tabGroup, j) in tabGroups">
@@ -34,8 +33,8 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="primary" clipped-left clipped-right>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+    <v-app-bar app dark color="secondary"  clipped-left clipped-right>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
       <v-toolbar-title>
         {{ appName }}
       </v-toolbar-title>
@@ -58,7 +57,7 @@ export default {
   props: {
     appName: {
       type: String,
-      default: () => "Template App",
+      default: () => "Vue App Template",
     },
     appIcon: {
       type: String,
