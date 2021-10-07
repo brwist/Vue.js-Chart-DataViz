@@ -26,11 +26,11 @@ Here are some **technologies** you will be using interacting with in the repo
 ### Prebuilt Components
 * Header 
 * Footer 
-* left navigation drawer
+* Left navigation drawer
 
 ### Implemented Features
-* routing - for multiple pages
-* vuex - state managment
+* Routing - for multiple pages
+* Vuex - state managment
 
 ## Process
 1. Fork Repo.
