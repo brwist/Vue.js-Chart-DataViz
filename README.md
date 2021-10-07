@@ -1,10 +1,10 @@
-<img width="100%" src="https://d1s4umho1unrgr.cloudfront.net/2018/10/29/1…V3ukfp~sJFI5Ww__&Key-Pair-Id=APKAITFCDZDSWOJU5OZA" alt="alis_ investments" />
+<img width="100%" src="./assets/logo.gif" alt="alis_ investments" />
 
 # Hey Welcome to alis_ Templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
 
 ---
 
-# vue_component_template_repo
+# Template: vue_component_template_repo
 This repo will serve as a template outlining best practices to complied with as well as accompnaying code samples.
 
 ---
