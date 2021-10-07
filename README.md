@@ -1,6 +1,6 @@
 <img width="45%" src="./src/assets/logo.gif" alt="alis_ investments" />
 
-# Hey Welcome to alis_ Templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
+# Hey, welcome to alis_ templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
 
 # Template: vue_component_template_repo
 This repo will serve as a template outlining best practices to complied with as well as accompnaying code samples.
