@@ -1,4 +1,4 @@
-<img width="100%" src="./src/assets/logo.gif" alt="alis_ investments" />
+<img width="30%" src="./src/assets/logo.gif" alt="alis_ investments" />
 
 # Hey Welcome to alis_ Templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
 
