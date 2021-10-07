@@ -89,30 +89,3 @@ Loads a SASS/SCSS file and compiles it to CSS.
 ### node-sass
 Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
 </details>
-
-
-## Client Package Descriptions
-### Webpack-bundle-analyze:
-Visualize size of webpack output files with an interactive zoomable treemap.
-(Take a look @ bundlephobia)
-
-### vue-fragment
-Fragment component for vue.js
-
-### vue-router
-Vue Router is the official router for Vue.js
-
-### eslint
-ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
-
-### eslint-plugin-vue
-This plugin allows us to check the <template> and <script> of .vue files with ESLint, as well as Vue code in .js files.
-
-### vuetify loader
-The vuetify-loader alleviates this pain by automatically importing all the Vuetify components you use, where you use them. This will also make code-splitting more effective, as webpack will only load the components required for that chunk to be displayed.
-
-### sass-loader
-Loads a SASS/SCSS file and compiles it to CSS.
-
-### node-sass
-Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
