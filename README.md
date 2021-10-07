@@ -61,10 +61,8 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-<details open>
-  <summary><b>Client Dependencies</b></summary>
-  <br>
-  ### Webpack-bundle-analyze:
+## Dependencies
+### Webpack-bundle-analyze:
 Visualize size of webpack output files with an interactive zoomable treemap.
 (Take a look @ bundlephobia)
 
@@ -88,4 +86,4 @@ Loads a SASS/SCSS file and compiles it to CSS.
 
 ### node-sass
 Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
-</details>
+
