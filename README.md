@@ -62,7 +62,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Dependencies
-### Webpack-bundle-analyze:
+### webpack-bundle-analyze:
 Visualize size of webpack output files with an interactive zoomable treemap.
 (Take a look @ bundlephobia)
 
