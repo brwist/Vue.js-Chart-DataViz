@@ -2,10 +2,10 @@
 
 # Hey, welcome to alis_ templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
 
-# Template: vue_component_template_repo
+## Template: vue_component_template_repo
 This repo will serve as a template outlining best practices to complied with as well as accompnaying code samples.
 
-# Our Toolbox
+## Our Toolbox
 
 Here are some **technologies** you will be using interacting with in the repo
 
@@ -23,8 +23,12 @@ Here are some **technologies** you will be using interacting with in the repo
 </details>
 
 ## Features already configured:
-* vuetify (dark theme)
-* left navigation dra wer
+### Prebuilt Components
+* Header 
+* Footer 
+* left navigation drawer
+
+### Implemented Features
 * routing - for multiple pages
 * vuex - state managment
 
