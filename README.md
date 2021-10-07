@@ -1,7 +1,32 @@
-# Hey Welcome to alis_ Templates 👋🏽
+<img width="100%" src="https://d1s4umho1unrgr.cloudfront.net/2018/10/29/1…V3ukfp~sJFI5Ww__&Key-Pair-Id=APKAITFCDZDSWOJU5OZA" alt="alis_ investments" />
+
+# Hey Welcome to alis_ Templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
+
+---
 
 # vue_component_template_repo
 This repo will serve as a template outlining best practices to complied with as well as accompnaying code samples.
+
+---
+
+# Our Toolbox
+
+Here are some **technologies** you will be using interacting with in the repo
+
+<details open>
+  <summary><b>Front end</b></summary>
+  <br>
+  <p>
+    <img width ='32px' title="Vue" src ='https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg'>
+    <img width ='32px' title="Vuetify" src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/vuetify.svg'>
+    <img width ='32px' title="HTML5" src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/html.svg'>
+    <img width ='32px' title="Javascript" src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/javascript.svg'>
+    <img width ='32px' title="SASS" src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/sass.svg'>
+    <img width ='32px' title="CSS3" src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/css.svg'>
+  </p>
+</details>
+
+---
 
 ## Features already configured:
 * vuetify (dark theme)
@@ -9,11 +34,21 @@ This repo will serve as a template outlining best practices to complied with as 
 * routing - for multiple pages
 * vuex - state managment
 
-## Project setup
+---
+
+## Process
+1. Fork Repo.
+2. Refer to components folder for code samples and hello world component.
+3. Please comment your code.
+4. Please lint before each commit.
+
+---
+
+## Available Scripts
+### Install Dependencies
 ```
 npm install
 ```
-
 ### Compiles and hot-reloads for development
 ```
 npm run serve
@@ -32,31 +67,12 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+---
+
 ## Client Package Descriptions
 ### Webpack-bundle-analyze:
 Visualize size of webpack output files with an interactive zoomable treemap.
 (Take a look @ bundlephobia)
-
-### Lodash
-Lodash is a JavaScript library which provides utility functions for common programming tasks using the functional programming paradigm.
-
-### Graphql
-The JavaScript reference implementation for GraphQL, a query language for APIs created by Facebook.
-
-### Apollo-client
-Apollo Client is a fully-featured caching GraphQL client with integrations for React, Angular, and more. It allows you to easily build UI components that fetch data via GraphQL.
-
-### Apollo-cache-inmemory
-apollo-cache-inmemory is the recommended cache implementation for Apollo Client 2.0. InMemoryCache is a normalized data store that supports all of Apollo Client 1.0's features without the dependency on Redux.
-
-### Apollo-link-http
-The http link is a terminating link that fetches GraphQL results from a GraphQL endpoint over an http connection.
-
-### Query-string
-Parse and stringify URL query strings. A query string commonly includes fields added to a base URL by a Web browser or other client application, for example as part of an HTML form
-
-### vue-apollo
-Allows you to integrate graphql with vue.js application
 
 ### vue-fragment
 Fragment component for vue.js
@@ -67,14 +83,8 @@ Vue Router is the official router for Vue.js
 ### eslint
 ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
 
-### eslint-plugin-graphql
-An ESLint plugin that checks tagged query strings inside JavaScript, or queries inside .graphql files, against a GraphQL schema.
-
 ### eslint-plugin-vue
 This plugin allows us to check the <template> and <script> of .vue files with ESLint, as well as Vue code in .js files.
-
-### graphql-tag
-A JavaScript template literal tag that parses GraphQL query strings into the standard GraphQL AST.
 
 ### vuetify loader
 The vuetify-loader alleviates this pain by automatically importing all the Vuetify components you use, where you use them. This will also make code-splitting more effective, as webpack will only load the components required for that chunk to be displayed.
