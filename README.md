@@ -22,23 +22,17 @@ Here are some **technologies** you will be using interacting with in the repo
   </p>
 </details>
 
----
-
 ## Features already configured:
 * vuetify (dark theme)
 * left navigation dra wer
 * routing - for multiple pages
 * vuex - state managment
 
----
-
 ## Process
 1. Fork Repo.
 2. Refer to components folder for code samples and hello world component.
 3. Please comment your code.
 4. Please lint before each commit.
-
----
 
 ## Available Scripts
 ### Install Dependencies
@@ -62,8 +56,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
----
 
 ## Client Package Descriptions
 ### Webpack-bundle-analyze:
