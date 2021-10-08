@@ -34,7 +34,7 @@ Here are some **technologies** you will be using interacting with in the repo
 * Vuex - state managment
 
 ## General HouseKeeping
-* Commit after using commitizen commit format
+* Commit often (use commitizen message format)
 * Lint all code before commiting. 
 
 ## Process
