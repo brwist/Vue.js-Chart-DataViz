@@ -3,8 +3,8 @@
 # Hey, welcome to alis_ templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
 
 ## Template: vue_component_template_repo
-This repo will serve as a template outlining best practices to complied with as well as accompnaying code samples. 
-In the components folder there is a chart sample that you can refer to. 
+This repo will serve as a template outlining best practices to complied with as well as accompnaying code samples.
+In the components folder there is a chart sample that you can refer to.
 
 ## Our Toolbox
 
@@ -25,8 +25,8 @@ Here are some **technologies** you will be using interacting with in the repo
 
 ## Features already configured:
 ### Components
-* Header 
-* Footer 
+* Header
+* Footer
 * Left navigation drawer
 
 ### Implemented Features
@@ -34,13 +34,13 @@ Here are some **technologies** you will be using interacting with in the repo
 * Vuex - state managment
 
 ## General HouseKeeping
-* Commit often (use commitizen message format)
-* Lint all code before commiting. 
+* Commit often (use conventional commit message format)
+* Lint all code before commiting.
 
 ## Process
 1. Fork Repo.
 2. Download dependencies (see scripts).
-3. Run (see scripts). 
+3. Run (see scripts).
 4. After running, navigate to the browser to see a the component
 5. Refer to components folder for code samples and hello world component.
 
