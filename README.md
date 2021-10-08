@@ -24,7 +24,7 @@ Here are some **technologies** you will be using interacting with in the repo
 </details>
 
 ## Features already configured:
-### Prebuilt Components
+### Components
 * Header 
 * Footer 
 * Left navigation drawer
@@ -33,11 +33,16 @@ Here are some **technologies** you will be using interacting with in the repo
 * Routing - for multiple pages
 * Vuex - state managment
 
+## General HouseKeeping
+* Commit after using commitizen commit format
+* Lint all code before commiting. 
+
 ## Process
 1. Fork Repo.
-2. Refer to components folder for code samples and hello world component.
-3. Please comment your code.
-4. Please lint before each commit.
+2. Download dependencies (see scripts).
+3. Run (see scripts). 
+4. After running, navigate to the browser to see a the component
+5. Refer to components folder for code samples and hello world component.
 
 ## Available Scripts
 ### Install Dependencies
