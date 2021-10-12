@@ -5,7 +5,7 @@
 ## Vue Component Template
 This template will serve as the scaffolding for all components built for alis_ technologies LLC. The coding environment housed in this repo contains all the necessary dependencies and highlights best practices followed by alis_,  which in due course will facilitate frictionless integration of the component back into our systems. This allows developers working in this repo to simply do what they do best, create beautiful looking vue components with minimal onboarding pre-dev, and easy integration post-dev. 
 
-**Technologies** you will be using interacting with in the repo
+**Technologies** you will be using interacting within the repo
 <details open>
   <summary><b>Front end</b></summary>
   <br>
@@ -19,32 +19,46 @@ This template will serve as the scaffolding for all components built for alis_ t
 
 We opted to use vue 2.x and not vue 3.x because we rely on and encourage the use of a vuetify to decrease iteration cycle time, and speed up dev. For the same reason javascript is favoured over typescript. 
 
-## Installation
+## Getting started
 1. Fork repo to your personal github.
 2. Clone repo to local environment.
-3. Install dependencies. 
-
+3. Install dependencies.
 ```
 cd ./vue_component_template_repo/src
-npm i
+npm install
 ```
-
 4. Create development environment.
 ```
 npm run serve 
 ```
+## Developing your component:
+1. Create a folder in `src/components` with your name as the folder name
+2. Create a folder in `src/components/your_name` with the component name as specified in your spec.
+3. You can add any files you need for your component in this directory.
+4. Make commits in your repo and ask us to review. 
+5. We will make comments on your commit if any rework is required.
+6. Once we give the go ahead, you will integrate your component into our repo by:
 
-## Use 
-### General
+## Integrating your component:
+1. Add a data object to represent your component in .........
+2. Make a pull request to our repo that you forked initially.
+3. View your contribution in our component library at ......
+
+## Guidelines 
+#### Material Design
 * For a consistent look and feel across the application, please comply with the guidelines layed out in the material design framework. 
-### Layout
-* alis_ has built header and footer components. For consistency across the codebase, please include these components in your application. 
-### State Management
-* Vuex is the tool of choice for state management accross vue powered applications. A basic vuex store has been setup should you need it. There are code samples for informative and documentation purposes. 
-### Vuetify 
-* Vuetify offers a library of prebuild components that comply with material design standards. Where applicable we encourate the use of these components to increase iteration speed. 
-
-
+#### Layout
+* alis_ has built header and footer components. For consistency across the codebase, please do not alter our application layout. 
+#### State Management
+* Vuex is the tool of choice for state management across vue powered applications. A basic vuex store has been set up should you need it. There are code samples for informative and documentation purposes. 
+#### Vuetify 
+* Vuetify offers a library of prebuild components that comply with material design standards. Where applicable, we encourage the use of these components to increase iteration speed. 
+#### alis_ Component Library
+* You will see our library of past components in ....... You will also be making your addition here.
+#### amCharts Library
+* We use the amCharts library for any data visualisation components like line charts, bar charts, etc.
+#### Dependency Management
+* All the dependencies you need should be set up in this repo already. Please let us know if you would like to add or remove any of these dependencies. We are open to your ideas, but please keep things consistent otherwise :).
 
 ## Available Scripts
 ### Install Dependencies
@@ -65,9 +79,6 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Dependencies
 ### webpack-bundle-analyze:
@@ -95,3 +106,5 @@ Loads a SASS/SCSS file and compiles it to CSS.
 ### node-sass
 Node-sass is a library that provides binding for Node.js to LibSass, the C version of the popular stylesheet preprocessor, Sass.
 
+### @amcharts/amcharts4
+Chart library that we use for building any data visualisation type components.
