@@ -23,6 +23,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import moment from "moment";
 
 export default {
+  name: "line-chart",
   props: {
     chartHeight: {
       type: Number,

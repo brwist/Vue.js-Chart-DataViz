@@ -1,5 +1,5 @@
 <template>
-  <LineChart :series="lineSeries" :fadedLines="faded" />
+  <line-chart :series="lineSeries" :fadedLines="faded" />
 </template>
 
 <script>
@@ -29,6 +29,7 @@ const transform = (arr) => {
 };
 
 export default {
+  name: "ml-cagr-return",
   components: {
     LineChart,
   },

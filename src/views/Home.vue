@@ -17,7 +17,6 @@ import HomeUsefulLinks from "@/views/HomeUsefulLinks";
 
 export default {
   name: "Home",
-
   components: {
     HomeUsefulLinks,
     Fragment,
