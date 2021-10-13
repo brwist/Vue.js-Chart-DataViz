@@ -64,7 +64,7 @@
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "home-useful-links",
 
   data: () => ({
     materialDesign: [
