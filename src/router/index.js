@@ -12,11 +12,6 @@ const routes = [
     component: Home,
   },
   {
-    path: "/about",
-    name: "about",
-    component: Home,
-  },
-  {
     path: "/example",
     name: "example",
     component: ML_CAGR_Return,
