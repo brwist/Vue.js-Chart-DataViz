@@ -81,15 +81,15 @@ export default {
       ],
       developers: [
         {
-          name: "example",
-          email: "email@email.com",
-          github: "https://github.com/Alis-AP-Team",
-          linkedin: "https://www.linkedin.com/company/alis-fund/about/",
+          name: "Giorgi Ghviniashvili ",
+          email: "mr.g.ghv@gmail.com",
+          github: "https://github.com/giorgi-ghviniashvili",
+          linkedin: "https://www.linkedin.com/in/giorgi-ghviniashvili/",
           directory: "ML_CAGR_Return",
-          description: "example",
-          category: "example",
-          time: "3",
-          comments: "example",
+          description: "Return line chart",
+          category: "chart",
+          time: "",
+          comments: "",
         },
       ],
     };

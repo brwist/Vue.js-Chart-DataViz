@@ -12,8 +12,8 @@ const routes = [
     component: Home,
   },
   {
-    path: "/example",
-    name: "example",
+    path: "/ML_CAGR_Return",
+    name: "ML_CAGR_Return",
     component: ML_CAGR_Return,
   }
 ];
