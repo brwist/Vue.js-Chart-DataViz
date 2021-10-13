@@ -1,19 +1,20 @@
 <template>
-  <div>
-    <div class="line-chart"
-      :style="`height: ${chartHeight}px; width: 100%;`"
-    ></div>
-    <div class="buttons">
-      <v-btn
-        fab
-        small
-        color="primary"
-        v-for="b in zoomBtns"
-        :key="b.label"
-        @click="zoomToDates(b)"
+  <v-container>
+    <v-row>
+      <div class="line-chart"
+           :style="`height: ${chartHeight}px; width: 100%;`"
+      ></div>
+    </v-row>
+    <v-row align="center">
+      <v-col align="center" v-for="b in zoomBtns" :key="b.label">
+        <v-btn
+            fab
+            small
+            @click="zoomToDates(b)"
         >{{ b.label }}</v-btn>
-    </div>
-  </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -146,10 +147,5 @@ export default {
 </script>
 
 <style>
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 50px;
-}
+
 </style>

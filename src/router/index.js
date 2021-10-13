@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import ML_CAGR_Return from "../views/ML_CAGR_Return";
+import ML_CAGR_Return from "@/components/giorgi/cagrReturnComparisonLineChart/ML_CAGR_Return";
 
 Vue.use(VueRouter);
 

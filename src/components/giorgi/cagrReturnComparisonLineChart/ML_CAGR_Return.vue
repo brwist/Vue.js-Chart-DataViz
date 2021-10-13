@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import data1 from "@/data/290_16.json";
-import data2 from "@/data/290_20.json";
-import data3 from "@/data/291_01.json";
-import data4 from "@/data/291_03.json";
-import LineChart from "@/components/LineChart";
+import data1 from "@/components/giorgi/cagrReturnComparisonLineChart/data/290_16.json"
+import data2 from "@/components/giorgi/cagrReturnComparisonLineChart/data/290_20.json";
+import data3 from "@/components/giorgi/cagrReturnComparisonLineChart/data/291_01.json";
+import data4 from "@/components/giorgi/cagrReturnComparisonLineChart/data/291_03.json";
+import LineChart from "@/components/giorgi/cagrReturnComparisonLineChart/LineChart";
 
 const transform = (arr) => {
   return arr
