@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import axios from "@/plugins/axios";
 
 Vue.use(Vuex);
 
@@ -22,10 +21,7 @@ export default new Vuex.Store({
   },
   actions: {
     loadTabs({ commit }) {
-      return axios.get("/tabs").then(({ data }) => {
-        commit(SET_TABS, data);
-        return data;
-      });
+      //logic go get tabs
     },
   },
 });
