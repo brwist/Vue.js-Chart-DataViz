@@ -1,31 +1,128 @@
 <template>
-  <Fragment>
-    <v-row class="text-center">
-      <v-col cols="12"> 
-        <h3>
-        Welcome to the alis_ Vue App Project Template. It is a vue app powered by vuetify.
-        </h3>
+  <v-container fluid>
+    <v-row
+        class="pb-1"
+        style="min-width: 500px"
+    >
+      <v-text-field
+          v-model="filters.search"
+          label="Search Components"
+          single-line
+          hide-details
+          class="ml-3 mb-8"
+          style="max-width: 280px"
+      >
+        <template v-slot:prepend-inner>
+          <v-icon left>
+            search
+          </v-icon>
+        </template>
+      </v-text-field>
+    </v-row>
+    <v-row>
+      <v-col cols="12">
+        <v-data-table
+            dense
+            fixed-header
+            :headers="headers"
+            :items="developers"
+            :group-by="groupBy"
+            item-key="name"
+            hide-default-footer
+            :items-per-page="-1"
+            class="elevation-1"
+            multi-sort
+            :height="tableHeight"
+            :search="filters.search"
+        >
+          <template  v-slot:[`item.more`]="{ item }">
+            <v-btn
+                icon
+                size="sm"
+                :class="getMoreClass(item.id)"
+                @click="onMoreClick(item)"
+            >
+              <v-icon small>
+                navigate_next
+              </v-icon>
+            </v-btn>
+          </template>
+        </v-data-table>
       </v-col>
     </v-row>
-    <home-useful-links />
-  </Fragment>
+  </v-container>
 </template>
 
 <script>
-import { Fragment } from "vue-fragment";
-import HomeUsefulLinks from "@/views/HomeUsefulLinks";
-
+import RoutingHandler from "../utils/routingHandler.mixin"
 export default {
   name: "Home",
-  components: {
-    HomeUsefulLinks,
-    Fragment,
-  },
-
+  mixins: [RoutingHandler],
   data() {
-    return {};
+    return {
+      filters: {
+        search: '',
+        state: [],
+        // kind: [],
+      },
+      windowHeight: window.innerHeight,
+      selected: [],
+      headers: [
+        {text: "Name", value: "name", align: 'start', sortable: false},
+        {text: "Email", value: "email", align: 'start', sortable: false},
+        {text: "Github Profile", value: "github", align: 'start', sortable: false},
+        {text: "Linkedin", value: "linkedin", align: 'start', sortable: false},
+        {text: "Component Directory", value: "directory", align: 'start', sortable: false},
+        {text: "Component Description", value: "description", align: 'start', sortable: false},
+        { text: "Component Category", value: 'category', align: 'start', sortable: false,},
+        { text: "Dev Time", value: 'time', align: 'start', sortable: false,},
+        { text: "Comments", value: 'comments', align: 'start', sortable: false,},
+        { text: "Route to Component", value: 'more', align: 'center', sortable: false,},
+      ],
+      developers: [
+        {
+          name: "example",
+          email: "email@email.com",
+          github: "https://github.com/Alis-AP-Team",
+          linkedin: "https://www.linkedin.com/company/alis-fund/about/",
+          directory: "ML_CAGR_Return",
+          description: "example",
+          category: "example",
+          time: "3",
+          comments: "example",
+        },
+      ],
+    };
+  },
+  computed: {
+    groupBy() {
+      if (this.developers.length) {
+        return 'name';
+      } else {
+        return null;
+      }
+    },
+    tableHeight() {
+      return this.windowHeight - 206;
+    },
+  },
+  methods: {
+    getMoreClass(id) {
+      const selected = this.selected.some(d => d.id === id);
+      return `more-btn ${selected ? 'selected-row' : ''}`
+    },
+    onMoreClick(item) {
+      this.routeToView(item.directory);
+    },
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.windowHeight = window.innerHeight;
+    });
   },
 };
 </script>
 
-<style></style>
+<style>
+
+</style>
