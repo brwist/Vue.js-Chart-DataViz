@@ -67,7 +67,7 @@ export default {
       windowHeight: window.innerHeight,
       selected: [],
       headers: [
-        {text: "Job ID", value: "jobID", align: 'start', sortable: false},
+        {text: "Project ID", value: "projectID", align: 'start', sortable: false},
         {text: "Name", value: "developerName", align: 'start', sortable: false},
         {text: "Email", value: "email", align: 'start', sortable: false},
         {text: "Github Profile", value: "github", align: 'start', sortable: false},
@@ -80,7 +80,7 @@ export default {
       ],
       projects: [
         {
-          jobID: "AAA",
+          projectID: "AAA",
           developerName: "Giorgi Ghviniashvili ",
           email: "mr.g.ghv@gmail.com",
           github: "https://github.com/giorgi-ghviniashvili",
@@ -95,7 +95,7 @@ export default {
   },
   computed: {
     groupBy() {
-      if (this.jobs.length) {
+      if (this.projects.length) {
         return 'name';
       } else {
         return null;
@@ -111,7 +111,7 @@ export default {
       return `more-btn ${selected ? 'selected-row' : ''}`
     },
     onMoreClick(item) {
-      this.routeToView(item.jobID);
+      this.routeToView(item.projectID);
     },
   },
   mounted() {
