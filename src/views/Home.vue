@@ -25,7 +25,7 @@
             dense
             fixed-header
             :headers="headers"
-            :items="developers"
+            :items="jobs"
             :group-by="groupBy"
             item-key="name"
             hide-default-footer
@@ -68,24 +68,24 @@ export default {
       windowHeight: window.innerHeight,
       selected: [],
       headers: [
-        {text: "Name", value: "name", align: 'start', sortable: false},
+        {text: "Job ID", value: "jobID", align: 'start', sortable: false},
+        {text: "Name", value: "developerName", align: 'start', sortable: false},
         {text: "Email", value: "email", align: 'start', sortable: false},
         {text: "Github Profile", value: "github", align: 'start', sortable: false},
         {text: "Linkedin", value: "linkedin", align: 'start', sortable: false},
         {text: "Component Directory", value: "directory", align: 'start', sortable: false},
-        {text: "Component Description", value: "description", align: 'start', sortable: false},
         { text: "Component Category", value: 'category', align: 'start', sortable: false,},
         { text: "Dev Time", value: 'time', align: 'start', sortable: false,},
         { text: "Comments", value: 'comments', align: 'start', sortable: false,},
         { text: "Route to Component", value: 'more', align: 'center', sortable: false,},
       ],
-      developers: [
+      jobs: [
         {
-          name: "Giorgi Ghviniashvili ",
+          jobID: "AAA",
+          developerName: "Giorgi Ghviniashvili ",
           email: "mr.g.ghv@gmail.com",
           github: "https://github.com/giorgi-ghviniashvili",
           linkedin: "https://www.linkedin.com/in/giorgi-ghviniashvili/",
-          directory: "ML_CAGR_Return",
           description: "Return line chart",
           category: "chart",
           time: "",
@@ -96,7 +96,7 @@ export default {
   },
   computed: {
     groupBy() {
-      if (this.developers.length) {
+      if (this.jobs.length) {
         return 'name';
       } else {
         return null;
@@ -112,7 +112,7 @@ export default {
       return `more-btn ${selected ? 'selected-row' : ''}`
     },
     onMoreClick(item) {
-      this.routeToView(item.directory);
+      this.routeToView(item.jobID);
     },
   },
   mounted() {
