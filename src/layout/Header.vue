@@ -28,6 +28,13 @@
       >
         Component Library
       </v-btn>
+      <v-btn
+          class="font-weight-regular"
+          text
+          @click="routeToView('Resources')"
+      >
+        Useful Links
+      </v-btn>
     </v-app-bar>
   </Fragment>
 </template>
