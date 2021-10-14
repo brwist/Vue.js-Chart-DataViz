@@ -24,14 +24,14 @@
       <v-btn
           class="font-weight-regular"
           text
-          @click="routeToView('Home')"
+          @click="routeToView('Library')"
       >
         Component Library
       </v-btn>
       <v-btn
           class="font-weight-regular"
           text
-          @click="routeToView('Resources')"
+          @click="routeToView('UsefulLinks')"
       >
         Useful Links
       </v-btn>
