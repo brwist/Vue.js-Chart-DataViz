@@ -1,45 +1,41 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 import Library from "../views/Library";
 import ReturnComparison from "../library/AAA/ReturnComparison/ReturnComparison";
-import HomeUsefulLinks from "../views/HomeUsefulLinks";
+import LibraryContainer from "../views/LibraryContainer";
+import Projects from "../views/Projects";
 
 
 Vue.use(VueRouter);
 
 const routes = [
+
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "LibraryContainer",
     redirect: {name: "Library"},
+    component: LibraryContainer,
     children: [
-      {
-        path: "/resources",
-        name: "Resources",
-        component: HomeUsefulLinks,
-      },
       {
         path: "/library",
         name: "Library",
         component: Library,
       },
-
-        // Example project route
-        // Add a project route as a child of the Home component.
       {
-        // Path format: library/project/{{projectID}}/{{projectContainerComponentName}}
-        path: "library/project/AAA/ReturnComparison",
-
-        // Name format: {{projectID}}
-        name: "AAA",
-
-        // Component format: {{Semantic name given to your main container component}}.
-        // Component must match the name
-        component: ReturnComparison,
-      }
-    //  ------> Add your new project's route here
+        path: "projects",
+        name: "Projects",
+        component: Projects,
+        children: [
+          {
+            // format path: {{projectID}}/{{containerComponent}}
+            path: "AAA/return-comparison",
+            // format name: {{projectID}}
+            name: "AAA",
+            // format component: {{containerComponent}}
+            component: ReturnComparison,
+          },
+        ]
+      },
     ]
   },
 ];
@@ -51,3 +47,4 @@ const router = new VueRouter({
 });
 
 export default router;
+
