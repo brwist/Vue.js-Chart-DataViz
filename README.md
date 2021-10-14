@@ -20,8 +20,8 @@ This template will serve as the scaffolding for all components built for alis_ t
 We opted to use vue 2.x and not vue 3.x because we rely on and encourage the use of a vuetify to decrease iteration cycle time, and speed up dev. For the same reason javascript is favoured over typescript. 
 
 ## Getting started
-1. Fork repo to your personal github.
-2. Clone repo to local environment.
+1. Fork the template repo to your personal github.
+2. Clone the forked repo into your local environment.
 3. Install dependencies.
 ```
 cd ./vue_component_template_repo/src
@@ -31,16 +31,17 @@ npm install
 ```
 npm run serve 
 ```
+5. Browse our community's past examples in .......
 ## Developing your component:
-1. Create a folder in `src/components` with your name as the folder name
-2. Create a folder in `src/components/your_name` with the component name as specified in your spec.
-3. You can add any files you need for your component in this directory.
-4. Make commits in your repo and ask us to review. 
-5. We will make comments on your commit if any rework is required.
-6. Once we give the go ahead, you will integrate your component into our repo by:
+1. Create a folder in `src/library` with your project ID as the folder name.
+2. You can add any files you need for your component in this directory.
+3. Make commits in your repo and ask us to review. 
+4. We will make comments on your commits if any rework is required.
+5. Once we give the go ahead, you will integrate your component into our repo by:
 
 ## Integrating your component:
-1. Add a data object to represent your component in .........
+1. Add a data object to represent your work on the project in .........
+2. Make sure to also add a child element to the `src/router/index` file. This will make sure that the Library redirects to your work when our community browses for examples.
 2. Make a pull request to our repo that you forked initially.
 3. View your contribution in our component library at ......
 
