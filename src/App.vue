@@ -4,7 +4,7 @@
     <v-main>
       <!-- bottom padding 48px because of fixed footer -->
       <v-container class="pt-6 pb-12">
-        <router-view></router-view>
+        <home />
       </v-container>
     </v-main>
     <Footer />
@@ -13,12 +13,15 @@
 
 <script>
 import Header from "@/layout/Header";
+import Home from "./views/Home";
+
 
 export default {
   name: "App",
 
   components: {
     Header,
+    Home
   },
 };
 </script>
