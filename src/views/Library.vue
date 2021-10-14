@@ -25,7 +25,7 @@
           dense
           fixed-header
           :headers="headers"
-          :items="jobs"
+          :items="projects"
           :group-by="groupBy"
           item-key="name"
           hide-default-footer
@@ -78,7 +78,7 @@ export default {
         { text: "Comments", value: 'comments', align: 'start', sortable: false,},
         { text: "Route to Component", value: 'more', align: 'center', sortable: false,},
       ],
-      jobs: [
+      projects: [
         {
           jobID: "AAA",
           developerName: "Giorgi Ghviniashvili ",
