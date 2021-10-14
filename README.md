@@ -3,9 +3,9 @@
 # Hey, welcome to alis_ templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
 
 ## Vue Component Template
-This template will serve as the scaffolding for all components built for alis_ technologies LLC. The coding environment housed in this repo contains all the necessary dependencies and highlights best practices followed by alis_,  which in due course will facilitate frictionless integration of the component back into our systems. This allows developers working in this repo to simply do what they do best, create beautiful looking vue components with minimal onboarding pre-dev, and easy integration post-dev. 
+This repo serves as a library for all components built for alis_ technologies LLC. Please feel to look through the components created for alis_ to get inspiration from different projects. You will be able to browse different projects in the component library tables. After development, you will then add your project to the library table, which will allow you to showcase your work, and alis_ to access your work easily. 
 
-**Technologies** you will be using interacting within the repo
+**Technologies** you will be using within the repo
 <details open>
   <summary><b>Front end</b></summary>
   <br>
@@ -31,7 +31,7 @@ npm install
 ```
 npm run serve 
 ```
-5. Browse our community's past examples in .......
+5. Browse our community's past examples in `src/library/AAA`
 ## Developing your component:
 1. Create a folder in `src/library` with your project ID as the folder name.
 2. You can add any files you need for your component in this directory.
@@ -40,7 +40,7 @@ npm run serve
 5. Once we give the go ahead, you will integrate your component into our repo by:
 
 ## Integrating your component:
-1. Add a data object to represent your work on the project in .........
+1. Add an object to the `projects` data object to represent your work on the project in `src/views/Library`
 2. Make sure to also add a child element to the `src/router/index` file. This will make sure that the Library redirects to your work when our community browses for examples.
 2. Make a pull request to our repo that you forked initially.
 3. View your contribution in our component library at ......
