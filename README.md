@@ -55,7 +55,7 @@ npm run serve
 #### Vuetify 
 * Vuetify offers a library of prebuild components that comply with material design standards. Where applicable, we encourage the use of these components to increase iteration speed. 
 #### alis_ Component Library
-* You will see our library of past components in ....... You will also be making your addition here.
+* You will see our library of past components in `src/library` You will also be making your addition here.
 #### amCharts Library
 * We use the amCharts library for any data visualisation components like line charts, bar charts, etc.
 #### Dependency Management
