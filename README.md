@@ -3,7 +3,7 @@
 # Hey, welcome to alis_ templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
 
 ## Vue Component Template
-This repo serves as a library for all components built for alis_ technologies LLC. Please feel to look through the components created for alis_ to get inspiration from different projects. You will be able to browse different projects in the component library tables. After development, you will then add your project to the library table, which will allow you to showcase your work, and alis_ to access your work easily. 
+This repo serves as a library for all components built for alis_ technologies LLC. Please feel to look through the components created for alis_ to get inspiration from different projects. You will be able to browse different projects in the component library table. After development, you will then add your project to the library table, which will allow you to showcase your work, and alis_ to access your work easily. 
 
 **Technologies** you will be using within the repo
 <details open>
@@ -31,7 +31,7 @@ npm install
 ```
 npm run serve 
 ```
-5. Browse our community's past examples in `src/library/AAA`
+5. Browse our community's past examples in `src/library`
 ## Developing your component:
 1. Create a folder in `src/library` with your project ID as the folder name.
 2. You can add any files you need for your component in this directory.
@@ -42,8 +42,7 @@ npm run serve
 ## Integrating your component:
 1. Add an object to the `projects` data object to represent your work on the project in `src/views/Library`
 2. Make sure to also add a child element to the `src/router/index` file. This will make sure that the Library redirects to your work when our community browses for examples.
-2. Make a pull request to our repo that you forked initially.
-3. View your contribution in our component library at ......
+3. Make a pull request to our repo that you forked initially.
 
 ## Guidelines 
 #### Material Design
