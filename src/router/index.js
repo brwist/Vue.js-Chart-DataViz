@@ -26,19 +26,20 @@ const routes = [
         component: Library,
       },
 
-        // Example
-        // Add a project routes as a child of Home component.
+        // Example project route
+        // Add a project route as a child of the Home component.
       {
-        // format path: library/project/{{projectID}}/{{projectContainerName}}
+        // Path format: library/project/{{projectID}}/{{projectContainerComponentName}}
         path: "library/project/AAA/ReturnComparison",
 
-        // format name: {{projectID}}
+        // Name format: {{projectID}}
         name: "AAA",
 
-        // format component: {{Semantic name given to component}}.
+        // Component format: {{Semantic name given to your main container component}}.
         // Component must match the name
         component: ReturnComparison,
       }
+    //  ------> Add your new project's route here
     ]
   },
 ];
