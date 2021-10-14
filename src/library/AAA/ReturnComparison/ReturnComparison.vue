@@ -29,6 +29,7 @@ const transform = (arr) => {
 };
 
 export default {
+  // export name in component must match the project ID
   name: "AAA",
   components: {
     ReturnComparisonLineChart,
