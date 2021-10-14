@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import data1 from "@/library/AAA/ReturnComparison/data/290_16.json"
-import data2 from "@/library/AAA/ReturnComparison/data/290_20.json";
-import data3 from "@/library/AAA/ReturnComparison/data/291_01.json";
-import data4 from "@/library/AAA/ReturnComparison/data/291_03.json";
-import ReturnComparisonLineChart from "@/library/AAA/ReturnComparison/components/ReturnComparisonLineChart";
+import data1 from "@/projectLibrary/AAA/ReturnComparison/data/290_16.json"
+import data2 from "@/projectLibrary/AAA/ReturnComparison/data/290_20.json";
+import data3 from "@/projectLibrary/AAA/ReturnComparison/data/291_01.json";
+import data4 from "@/projectLibrary/AAA/ReturnComparison/data/291_03.json";
+import ReturnComparisonLineChart from "@/projectLibrary/AAA/ReturnComparison/components/ReturnComparisonLineChart";
 
 const transform = (arr) => {
   return arr

@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Library from "../views/Library";
-import ReturnComparison from "../library/AAA/ReturnComparison/ReturnComparison";
+import ReturnComparison from "../projectLibrary/AAA/ReturnComparison/ReturnComparison";
 import LibraryContainer from "../views/LibraryContainer";
 import Projects from "../views/Projects";
 
@@ -27,11 +27,11 @@ const routes = [
         component: Projects,
         children: [
           {
-            // format path: {{projectID}}/{{containerComponent}}
+            // Path Format: {{projectID}}/{{containerComponent}}
             path: "AAA/return-comparison",
-            // format name: {{projectID}}
+            // Name Format: {{projectID}}
             name: "AAA",
-            // format component: {{containerComponent}}
+            // Component Format: {{containerComponent}}
             component: ReturnComparison,
           },
         ]
