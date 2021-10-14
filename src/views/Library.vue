@@ -39,7 +39,7 @@
           <v-btn
               icon
               size="sm"
-              :class="getMoreClass(item.id)"
+              :class="getMoreClass(item.projectID)"
               @click="onMoreClick(item)"
           >
             <v-icon small>
