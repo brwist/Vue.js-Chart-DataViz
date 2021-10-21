@@ -5,6 +5,8 @@ import ReturnComparison from "../projectLibrary/AAA/ReturnComparison/ReturnCompa
 import OverlappingHistograms from "../projectLibrary/AAD/OverlappingHistograms/OverlappingHistograms";
 import LibraryContainer from "../views/LibraryContainer";
 import Projects from "../views/Projects";
+import AAB from "@/projectLibrary/AAB/RollingHistograms/AAB";
+import AAC from "@/projectLibrary/AAC/OverlappingHistograms/AAC";
 
 
 Vue.use(VueRouter);
@@ -34,6 +36,16 @@ const routes = [
             name: "AAA",
             // Component Format: {{containerComponent}}
             component: ReturnComparison,
+          },
+          {
+            path: 'AAB/AAB',
+            name: 'AAB',
+            component: AAB,
+          },
+          {
+            path: 'AAC/AAC',
+            name: 'AAC',
+            component: AAC,
           },
           {
             path: "AAD/overlapping-histograms",
