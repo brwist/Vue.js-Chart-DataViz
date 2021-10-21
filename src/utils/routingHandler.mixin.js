@@ -15,7 +15,7 @@ export default {
         //to the existing state driven query.
         //If keepStateQuery = false, the updatedQuery replaces
         //the existing state driven query.
-        routeToView(routeName, params = null, keepStateQuery = true, updatedQuery = null,) {
+        routeToView(routeName, params = null) {
 
             if (this.$router.currentRoute.name === routeName) {
                 return;

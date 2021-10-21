@@ -1,9 +1,12 @@
 <template>
-  <return-comparison-line-chart :series="lineSeries" :fadedLines="faded" />
+  <return-comparison-line-chart
+    :series="lineSeries"
+    :faded-lines="faded"
+  />
 </template>
 
 <script>
-import data1 from "@/projectLibrary/AAA/ReturnComparison/data/290_16.json"
+import data1 from "@/projectLibrary/AAA/ReturnComparison/data/290_16.json";
 import data2 from "@/projectLibrary/AAA/ReturnComparison/data/290_20.json";
 import data3 from "@/projectLibrary/AAA/ReturnComparison/data/291_01.json";
 import data4 from "@/projectLibrary/AAA/ReturnComparison/data/291_03.json";

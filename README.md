@@ -24,16 +24,16 @@ We opted to use vue 2.x and not vue 3.x because we rely on and encourage the use
 2. Clone the forked repo into your local environment.
 3. Install dependencies.
 ```
-cd ./vue_component_template_repo/src
+cd ./vue_component_template_repo
 npm install
 ```
 4. Create development environment.
 ```
 npm run serve 
 ```
-5. Browse our community's past examples in `src/library`
+5. Browse our community's past examples in `src/projectLibrary`
 ## Developing your component:
-1. Create a folder in `src/library` with your project ID as the folder name.
+1. Create a folder in `src/projectLibrary` with your project ID as the folder name.
 2. You can add any files you need for your component in this directory.
 3. Make commits in your repo and ask us to review. 
 4. We will make comments on your commits if any rework is required.
@@ -54,7 +54,7 @@ npm run serve
 #### Vuetify 
 * Vuetify offers a library of prebuild components that comply with material design standards. Where applicable, we encourage the use of these components to increase iteration speed. 
 #### alis_ Component Library
-* You will see our library of past components in `src/library` You will also be making your addition here.
+* You will see our library of past components in `src/projectLibrary` You will also be making your addition here.
 #### amCharts Library
 * We use the amCharts library for any data visualisation components like line charts, bar charts, etc.
 #### Dependency Management

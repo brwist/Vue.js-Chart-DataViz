@@ -1,17 +1,24 @@
 <template>
   <v-container>
     <v-row>
-      <div class="line-chart"
-           :style="`height: ${chartHeight}px; width: 100%;`"
-      ></div>
+      <div
+        class="line-chart"
+        :style="`height: ${chartHeight}px; width: 100%;`"
+      />
     </v-row>
     <v-row align="center">
-      <v-col align="center" v-for="b in zoomBtns" :key="b.label">
+      <v-col
+        v-for="b in zoomBtns"
+        :key="b.label"
+        align="center"
+      >
         <v-btn
-            fab
-            small
-            @click="zoomToDates(b)"
-        >{{ b.label }}</v-btn>
+          fab
+          small
+          @click="zoomToDates(b)"
+        >
+          {{ b.label }}
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -53,6 +60,23 @@ export default {
         { label: "5yr", value: 5, unit: "years" },
       ],
     };
+  },
+
+  watch: {
+    data() {
+      if (this.chart) this.chart.dispose();
+      this.initChart();
+    },
+  },
+
+  beforeDestroy() {
+    if (this.chart) {
+      this.chart.dispose();
+    }
+  },
+
+  mounted() {
+    this.initChart();
   },
 
   methods: {
@@ -126,23 +150,6 @@ export default {
         .toDate();
       this.chart.xAxes.getIndex(0).zoomToDates(date, new Date());
     },
-  },
-
-  beforeDestroy() {
-    if (this.chart) {
-      this.chart.dispose();
-    }
-  },
-
-  watch: {
-    data() {
-      if (this.chart) this.chart.dispose();
-      this.initChart();
-    },
-  },
-
-  mounted() {
-    this.initChart();
   },
 };
 </script>

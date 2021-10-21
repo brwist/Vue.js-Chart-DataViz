@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Library from "../views/Library";
 import ReturnComparison from "../projectLibrary/AAA/ReturnComparison/ReturnComparison";
+import OverlappingHistograms from "../projectLibrary/AAD/OverlappingHistograms/OverlappingHistograms";
 import LibraryContainer from "../views/LibraryContainer";
 import Projects from "../views/Projects";
 
@@ -33,6 +34,11 @@ const routes = [
             name: "AAA",
             // Component Format: {{containerComponent}}
             component: ReturnComparison,
+          },
+          {
+            path: "AAD/overlapping-histograms",
+            name: "AAD",
+            component: OverlappingHistograms,
           },
         ]
       },
