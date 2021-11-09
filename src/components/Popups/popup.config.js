@@ -38,7 +38,7 @@ export const PopupResources = {
         //LIBRARY ITEM CONFIGURATION
         //  Various fields used to drive
         //  the details that are displayed for a project in our Library.
-
+        projectID: "AAA",
         developerName: "Giorgi Ghviniashvili ",
         developerEmail: "mr.g.ghv@gmail.com",
         developerGithub: "https://github.com/giorgi-ghviniashvili",
@@ -76,7 +76,7 @@ export const PopupResources = {
         //LIBRARY ITEM CONFIGURATION
         //  Various fields used to drive
         //  the details that are displayed for a project in our Library.
-
+        projectID: "AAB",
         developerName: 'Ivaylo Gelov',
         developerEmail: 'ivo_gelov@gmx.net',
         developerGithub: '',
@@ -114,7 +114,7 @@ export const PopupResources = {
         //LIBRARY ITEM CONFIGURATION
         //  Various fields used to drive
         //  the details that are displayed for a project in our Library.
-
+        projectID: "AAC",
         developerName: 'Ivaylo Gelov',
         developerEmail: 'ivo_gelov@gmx.net',
         developerGithub: '',
@@ -152,7 +152,7 @@ export const PopupResources = {
         //LIBRARY ITEM CONFIGURATION
         //  Various fields used to drive
         //  the details that are displayed for a project in our Library.
-
+        projectID: "AAD",
         developerName: "Giorgi Ghviniashvili ",
         developerEmail: "mr.g.ghv@gmail.com",
         developerGithub: "https://github.com/giorgi-ghviniashvili",

@@ -48,7 +48,7 @@ export const moduleGlobal = {
                 visible: true,
                 color: color,
                 persistent: persistent,
-            })
+            });
         },
         closeSnackbar({ commit }) {
             commit(SET_SNACKBAR, {
@@ -56,7 +56,7 @@ export const moduleGlobal = {
                 visible: false,
                 color: null,
                 persistent: false,
-            })
+            });
         },
 
         //POPUPS

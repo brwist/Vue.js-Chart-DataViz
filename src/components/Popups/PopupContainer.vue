@@ -1,5 +1,8 @@
 <template>
-  <div :class="`popup ${config.popupClass || ''}`" :style="style">
+  <div
+    :class="`popup ${config.popupClass || ''}`"
+    :style="style"
+  >
     <v-card
       color="surface--el-8"
       elevation="8"
@@ -38,15 +41,14 @@
           class="slot-area mb-n4"
           :style="'max-height:' + renderAreaHeight + 'px'"
         >
-          <slot></slot>
+          <slot />
         </div>
-
       </v-card-text>
 
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-card-actions>
-        <v-spacer></v-spacer>
-        <slot name="actions"></slot>
+        <v-spacer />
+        <slot name="actions" />
         <v-btn
           :depressed="true"
           text

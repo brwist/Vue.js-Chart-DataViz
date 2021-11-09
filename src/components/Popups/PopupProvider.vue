@@ -9,6 +9,13 @@ export default {
     },
   },
 
+  data() {
+    return{
+      portfolios: [],
+      branches: [],
+    };
+  },
+
   computed: {
     ...mapState("resources/portfolios", [
       "selectedPortfolios"
@@ -16,13 +23,6 @@ export default {
     ...mapState("resources/branches", [
       "selectedBranches"
     ]),
-  },
-
-  data() {
-    return{
-      portfolios: [],
-      branches: [],
-    }
   },
 
   mounted() {

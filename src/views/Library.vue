@@ -25,7 +25,7 @@
           dense
           fixed-header
           :headers="headers"
-          :items="projects"
+          :items="projectItems"
           :group-by="groupBy"
           item-key="name"
           hide-default-footer
@@ -55,6 +55,8 @@
 
 <script>
 import RoutingHandler from "../utils/routingHandler.mixin";
+import {PopupResources} from "@/components/Popups/popup.config";
+import {mapActions} from "vuex";
 export default {
   name: "Library",
   mixins: [RoutingHandler],
@@ -68,10 +70,8 @@ export default {
       selected: [],
       headers: [
         {text: "Project ID", value: "projectID", align: 'start', sortable: false},
-        {text: "Container Component Name", value: "containerComponentName", align: 'start', sortable: false},
         {text: "Project Description", value: "projectDescription", align: 'start', sortable: false},
-        {text: "Project Category", value: 'projectCategory', align: 'start', sortable: false,},
-        {text: "Route to Component", value: 'more', align: 'center', sortable: false,},
+        {text: "Open Component Popup", value: 'more', align: 'center', sortable: false,},
         {text: "Developer Name", value: "developerName", align: 'start', sortable: false},
         {text: "Developer Email", value: "developerEmail", align: 'start', sortable: false},
         {text: "Github Profile", value: "developerGithub", align: 'start', sortable: false},
@@ -79,59 +79,16 @@ export default {
         {text: "Dev Time", value: 'devTime', align: 'start', sortable: false,},
         {text: "Comments", value: 'comments', align: 'start', sortable: false,},
       ],
-      projects: [
-        {
-          projectID: "AAA",
-          containerComponentName: "ReturnComparison",
-          developerName: "Giorgi Ghviniashvili ",
-          developerEmail: "mr.g.ghv@gmail.com",
-          developerGithub: "https://github.com/giorgi-ghviniashvili",
-          developerLinkedin: "https://www.linkedin.com/in/giorgi-ghviniashvili/",
-          projectDescription: "Line chart for comparing return series",
-          projectCategory: "chart",
-          devTime: "3 hours",
-          comments: "",
-        },
-        {
-          projectID: 'AAB',
-          containerComponentName: 'RollingHistograms',
-          developerName: 'Ivaylo Gelov',
-          developerEmail: 'ivo_gelov@gmx.net',
-          developerGithub: '',
-          developerLinkedin: 'https://www.linkedin.com/in/ivogelov-web-developer',
-          projectDescription: 'Rolling Histograms Visual',
-          projectCategory: 'chart',
-          devTime: '4 hours',
-          comments: '',
-        },
-        {
-          projectID: 'AAC',
-          containerComponentName: 'OverlappingHistograms',
-          developerName: 'Ivaylo Gelov',
-          developerEmail: 'ivo_gelov@gmx.net',
-          developerGithub: '',
-          developerLinkedin: 'https://www.linkedin.com/in/ivogelov-web-developer',
-          projectDescription: 'Overlapping Histograms Visual',
-          projectCategory: 'chart',
-          devTime: '6 hours',
-          comments: '',
-        },
-        {
-          projectID: "AAD",
-          containerComponentName: "OverlappingHistograms",
-          developerName: "Giorgi Ghviniashvili ",
-          developerEmail: "mr.g.ghv@gmail.com",
-          developerGithub: "https://github.com/giorgi-ghviniashvili",
-          developerLinkedin: "https://www.linkedin.com/in/giorgi-ghviniashvili/",
-          projectDescription: "Overlapping Histograms",
-          projectCategory: "chart",
-          devTime: "3 hours",
-          comments: "",
-        },
-      ],
+      projects: PopupResources,
     };
   },
   computed: {
+    projectItems() {
+      let projectItems = [];
+      let keys = Object.keys(this.projects);
+      keys.map((d) => projectItems.push(this.projects[d]));
+      return projectItems;
+    },
     groupBy() {
       if (this.projects.length) {
         return 'name';
@@ -149,12 +106,15 @@ export default {
     });
   },
   methods: {
+    ...mapActions("global", [
+      "pushPopup", "closePopup", "pushSnackbar", "closeSnackbar"
+    ]),
     getMoreClass(id) {
       const selected = this.selected.some(d => d.id === id);
       return `more-btn ${selected ? 'selected-row' : ''}`;
     },
     onMoreClick(item) {
-      this.routeToView(item.projectID);
+        this.pushPopup(item);
     },
   },
 };

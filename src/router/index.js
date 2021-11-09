@@ -24,35 +24,11 @@ const routes = [
         name: "Library",
         component: Library,
       },
+      //add your component to this dev path when you are working on a component
       {
-        path: "projects",
-        name: "Projects",
-        component: Projects,
-        children: [
-          {
-            // Path Format: {{projectID}}/{{containerComponent}}
-            path: "AAA/return-comparison",
-            // Name Format: {{projectID}}
-            name: "AAA",
-            // Component Format: {{containerComponent}}
-            component: ReturnComparison,
-          },
-          {
-            path: 'AAB/AAB',
-            name: 'AAB',
-            component: AAB,
-          },
-          {
-            path: 'AAC/AAC',
-            name: 'AAC',
-            component: AAC,
-          },
-          {
-            path: "AAD/overlapping-histograms",
-            name: "AAD",
-            component: OverlappingHistograms,
-          },
-        ]
+        path: "/dev",
+        name: "ComponentDevView",
+        component: AAB,
       },
     ]
   },
