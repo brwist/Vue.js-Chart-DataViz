@@ -2,6 +2,7 @@ import ReturnComparison from "@/projectLibrary/AAA/ReturnComparison/ReturnCompar
 import AAB from "@/projectLibrary/AAB/RollingHistograms/AAB";
 import AAC from "@/projectLibrary/AAC/OverlappingHistograms/AAC";
 import OverlappingHistograms from "@/projectLibrary/AAD/OverlappingHistograms/OverlappingHistograms";
+import DailyReturnIndexBottom from "@/projectLibrary/AAE/DailyReturnIndexBottom";
 
 
 // Popup Configurations that define all of the potential
@@ -177,12 +178,12 @@ export const PopupResources = {
         //Component which will be rendered
         //inside the popup. Ensure that the
         //component is imported.
-        component: OverlappingHistograms,
+        component: DailyReturnIndexBottom,
 
         //Optional custom sizing parameters.
         //If omitted then will default to
         //pre-specified values.
-        height: 500,
+        height: 700,
         width: 1000,
         minHeight: 400,
         minWidth: 600,
