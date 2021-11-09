@@ -164,5 +164,42 @@ export const PopupResources = {
         //Tags that can be given to the project. You could use this to categorise a project. For example give each line chart component a tag "line chart". Or assign a tag that can be used as an additional keyword match when searching for a project.
         tags: ["line chart", "D3"],
     },
+    AAE: {
+        //POPUP CONFIGURATION
+        //  Various elements used to drive
+        //  the generation of the popup.
 
+        //Title of the popup.
+        title: "Bottom Decile Line Series Comparison",
+        //Subtitle of the popup.
+        //This may be omitted.
+        subTitle: "AmCharts line chart",
+        //Component which will be rendered
+        //inside the popup. Ensure that the
+        //component is imported.
+        component: OverlappingHistograms,
+
+        //Optional custom sizing parameters.
+        //If omitted then will default to
+        //pre-specified values.
+        height: 500,
+        width: 1000,
+        minHeight: 400,
+        minWidth: 600,
+
+        //LIBRARY ITEM CONFIGURATION
+        //  Various fields used to drive
+        //  the details that are displayed for a project in our Library.
+        projectID: "AAE",
+        developerName: "Madelein van der Merwe",
+        developerEmail: "madelein@alis.capital",
+        developerGithub: "https://github.com/Madelein-rezco",
+        developerLinkedin: "https://www.linkedin.com/in/madelein-louw-7b3754134/",
+        projectDescription: "Bottom Decile Line Series Comparison",
+        devTime: "3 hours",
+        comments: "",
+
+        //Tags that can be given to the project. You could use this to categorise a project. For example give each line chart component a tag "line chart". Or assign a tag that can be used as an additional keyword match when searching for a project.
+        tags: ["line chart"],
+    },
 };
