@@ -1,6 +1,6 @@
 <img width="45%" src="./src/assets/logo.gif" alt="alis_ investments" />
 
-# Hey, welcome to alis_ templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
+# Hi, welcome to alis_ templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
 
 ## Vue Component Template
 This repo serves as a library for all components built for alis_ technologies LLC. Please feel to look through the components created for alis_ to get inspiration from different projects. You will be able to browse different projects in the component library table. After development, you will then add your project to the library table, which will allow you to showcase your work, and alis_ to access your work easily. 
@@ -17,7 +17,7 @@ This repo serves as a library for all components built for alis_ technologies LL
   </p>
 </details>
 
-We opted to use vue 2.x and not vue 3.x because we rely on and encourage the use of a vuetify to decrease iteration cycle time, and speed up dev. For the same reason javascript is favoured over typescript. 
+We opted to use vue 2.x and not vue 3.x because we rely on and encourage the use of Vuetify components to decrease iteration cycle time, and speed up dev. For the same reason javascript is favoured over typescript. 
 
 ## Getting started
 1. Fork the template repo to your personal github.
@@ -35,14 +35,10 @@ npm run serve
 ## Developing your component:
 1. Create a folder in `src/projectLibrary` with your project ID as the folder name.
 2. You can add any files you need for your component in this directory.
-3. Make commits in your repo and ask us to review. 
-4. We will make comments on your commits if any rework is required.
-5. Once we give the go ahead, you will integrate your component into our repo by:
-
-## Integrating your component:
-1. Add an object to the `projects` data object to represent your work on the project in `src/views/Library`
-2. Make sure to also add a child element to the `src/router/index` file. This will make sure that the Library redirects to your work when our community browses for examples.
-3. Make a pull request to our repo that you forked initially.
+3. Add your component to the `/dev` router path in `src/router/index`. This enables you to render your component at `http://localhost:3000/dev` while you are developing/testing your work.
+4. Add a configuration object to the `PopupResources` constant in `src/components/Popups/popup.config.js` in order to represent your work in `src/views/Library`.
+5. Make commits in your forked repo.
+6. Make a pull request to the original repo and ask us to review the work once you have a first version ready. We will give comments on the pull request if any rework is required.
 
 ## Guidelines 
 #### Material Design
@@ -95,7 +91,7 @@ Vue Router is the official router for Vue.js
 ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
 
 ### eslint-plugin-vue
-This plugin allows us to check the <template> and <script> of .vue files with ESLint, as well as Vue code in .js files.
+This plugin allows us to check the `<template>` and `<script>` of .vue files with ESLint, as well as Vue code in .js files.
 
 ### vuetify loader
 The vuetify-loader alleviates this pain by automatically importing all the Vuetify components you use, where you use them. This will also make code-splitting more effective, as webpack will only load the components required for that chunk to be displayed.
