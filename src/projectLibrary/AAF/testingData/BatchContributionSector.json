@@ -1,0 +1,758 @@
+{
+  "data": {
+    "batchContributionMetrics": [
+      {
+        "branchName": "Branch A",
+        "historicalContributions": [
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.0072
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.023855
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.004603
+              },
+              {
+                "id": "Energy",
+                "contribution": 0.014457
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.075624
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.011282
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.033646
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.03014
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.028042
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.002851
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.013598
+              },
+              {
+                "id": "Utilities",
+                "contribution": -0.00464
+              }
+            ],
+            "effectiveDate": "2021-11-08"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.01038
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.035374
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.015369
+              },
+              {
+                "id": "Energy",
+                "contribution": 0.00319
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.039915
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.04811
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.066295
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.090898
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.014253
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.003683
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.010637
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.021062
+              }
+            ],
+            "effectiveDate": "2019-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.009618
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.018267
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.014831
+              },
+              {
+                "id": "Energy",
+                "contribution": -0.014433
+              },
+              {
+                "id": "Financials",
+                "contribution": -0.011015
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.003105
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.027094
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.034444
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.039267
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.004077
+              },
+              {
+                "id": "Real Estate",
+                "contribution": -0.007408
+              },
+              {
+                "id": "Utilities",
+                "contribution": -0.001686
+              }
+            ],
+            "effectiveDate": "2020-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.002509
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.012546
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.011815
+              },
+              {
+                "id": "Energy",
+                "contribution": 0.000033
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.024126
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.020598
+              },
+              {
+                "id": "Industrials",
+                "contribution": -0.001002
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.007739
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.000257
+              },
+              {
+                "id": "N.A.",
+                "contribution": -0.001051
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.012039
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.006601
+              }
+            ],
+            "effectiveDate": "2015-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.000365
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.001906
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.008711
+              },
+              {
+                "id": "Energy",
+                "contribution": 0.038534
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.029392
+              },
+              {
+                "id": "Health Care",
+                "contribution": -0.006187
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.038661
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.02908
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.016435
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.000357
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.000806
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.015928
+              }
+            ],
+            "effectiveDate": "2016-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.00424
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.020975
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.012511
+              },
+              {
+                "id": "Energy",
+                "contribution": 0.006329
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.024283
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.021043
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.019884
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.034392
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.002878
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.00069
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.005749
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.005159
+              }
+            ],
+            "effectiveDate": "2017-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": -0.001855
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": -0.008788
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": -0.008351
+              },
+              {
+                "id": "Energy",
+                "contribution": -0.01011
+              },
+              {
+                "id": "Financials",
+                "contribution": -0.014464
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.01852
+              },
+              {
+                "id": "Industrials",
+                "contribution": -0.000621
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.012982
+              },
+              {
+                "id": "Materials",
+                "contribution": -0.006629
+              },
+              {
+                "id": "N.A.",
+                "contribution": -0.000447
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.004259
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.008237
+              }
+            ],
+            "effectiveDate": "2018-12-31"
+          }
+        ]
+      },
+      {
+        "branchName": "Branch B",
+        "historicalContributions": [
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.000504
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": -0.001266
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": -0.00916
+              },
+              {
+                "id": "Energy",
+                "contribution": 0.008528
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.006906
+              },
+              {
+                "id": "Health Care",
+                "contribution": -0.005497
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.006709
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.01884
+              },
+              {
+                "id": "Materials",
+                "contribution": -0.008224
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.001764
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.012362
+              },
+              {
+                "id": "Utilities",
+                "contribution": -0.003279
+              }
+            ],
+            "effectiveDate": "2021-11-08"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.039707
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.028949
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.013041
+              },
+              {
+                "id": "Energy",
+                "contribution": 0.009946
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.021343
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.016589
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.027945
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.028602
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.021188
+              },
+              {
+                "id": "N.A.",
+                "contribution": -0.000362
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.017726
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.020058
+              }
+            ],
+            "effectiveDate": "2019-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.017183
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.018141
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.008337
+              },
+              {
+                "id": "Energy",
+                "contribution": -0.010482
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.00946
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.015742
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.02217
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.056117
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.010218
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.006805
+              },
+              {
+                "id": "Real Estate",
+                "contribution": -0.010327
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.010457
+              }
+            ],
+            "effectiveDate": "2020-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.011578
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.020905
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.005318
+              },
+              {
+                "id": "Energy",
+                "contribution": -0.034436
+              },
+              {
+                "id": "Financials",
+                "contribution": -0.000489
+              },
+              {
+                "id": "Health Care",
+                "contribution": 0.018875
+              },
+              {
+                "id": "Industrials",
+                "contribution": -0.010668
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.010251
+              },
+              {
+                "id": "Materials",
+                "contribution": -0.005933
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.000255
+              },
+              {
+                "id": "Real Estate",
+                "contribution": -0.00493
+              },
+              {
+                "id": "Utilities",
+                "contribution": -0.004153
+              }
+            ],
+            "effectiveDate": "2015-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": 0.009083
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": 0.012928
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.001653
+              },
+              {
+                "id": "Energy",
+                "contribution": 0.04238
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.022847
+              },
+              {
+                "id": "Health Care",
+                "contribution": -0.010341
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.021805
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.012485
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.033632
+              },
+              {
+                "id": "N.A.",
+                "contribution": 0.003699
+              },
+              {
+                "id": "Real Estate",
+                "contribution": -0.006532
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.003255
+              }
+            ],
+            "effectiveDate": "2016-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": -0.006194
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": -0.00349
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": 0.015055
+              },
+              {
+                "id": "Energy",
+                "contribution": -0.012281
+              },
+              {
+                "id": "Financials",
+                "contribution": 0.022859
+              },
+              {
+                "id": "Health Care",
+                "contribution": -0.006204
+              },
+              {
+                "id": "Industrials",
+                "contribution": 0.007847
+              },
+              {
+                "id": "Information Technology",
+                "contribution": 0.011393
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.014672
+              },
+              {
+                "id": "N.A.",
+                "contribution": -0.000655
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.005999
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.001845
+              }
+            ],
+            "effectiveDate": "2017-12-31"
+          },
+          {
+            "contributions": [
+              {
+                "id": "Communication Services",
+                "contribution": -0.015974
+              },
+              {
+                "id": "Consumer Discretionary",
+                "contribution": -0.021223
+              },
+              {
+                "id": "Consumer Staples",
+                "contribution": -0.003096
+              },
+              {
+                "id": "Energy",
+                "contribution": -0.022605
+              },
+              {
+                "id": "Financials",
+                "contribution": -0.015014
+              },
+              {
+                "id": "Health Care",
+                "contribution": -0.001529
+              },
+              {
+                "id": "Industrials",
+                "contribution": -0.021475
+              },
+              {
+                "id": "Information Technology",
+                "contribution": -0.011428
+              },
+              {
+                "id": "Materials",
+                "contribution": 0.004274
+              },
+              {
+                "id": "N.A.",
+                "contribution": -0.001537
+              },
+              {
+                "id": "Real Estate",
+                "contribution": 0.002522
+              },
+              {
+                "id": "Utilities",
+                "contribution": 0.01224
+              }
+            ],
+            "effectiveDate": "2018-12-31"
+          }
+        ]
+      }
+    ]
+  }
+}

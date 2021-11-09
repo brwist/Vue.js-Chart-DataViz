@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Library from "../views/Library";
 import LibraryContainer from "../views/LibraryContainer";
-import AAB from "@/projectLibrary/AAB/RollingHistograms/AAB";
+import SectorContributionComparison from "@/projectLibrary/AAF/SectorContributionComparison";
 
 
 Vue.use(VueRouter);
@@ -24,7 +24,7 @@ const routes = [
       {
         path: "/dev",
         name: "ComponentDevView",
-        component: AAB,
+        component: SectorContributionComparison,
       },
     ]
   },
