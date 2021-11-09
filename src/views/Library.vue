@@ -97,7 +97,7 @@ export default {
       }
     },
     tableHeight() {
-      return this.windowHeight - 206;
+      return this.windowHeight - 230;
     },
   },
   mounted() {

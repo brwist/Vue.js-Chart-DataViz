@@ -3,7 +3,7 @@
     <router-view />
     <popup-container
       v-for="popup in popups"
-      :key="popup.id"
+      :key="popup.projectID"
       :config="popup"
       :title="popup.title || ''"
       :sub-title="popup.subTitle || ''"
