@@ -21,6 +21,12 @@
             style="flex-basis: 210px;"
           />
         </v-row>
+        <v-row>
+          <v-col
+            ref="legendTwo"
+            style="max-height: 100px;"
+          />
+        </v-row>
         <v-row align="center">
           <v-col
             v-for="b in zoomBtns"
@@ -103,7 +109,9 @@ export default {
       skipPoll: true,
       opIDs: [],
       chart: null,
-      legend: null,
+      legend: null, // sectors
+      legendTwo: null, // branches
+      activeSector: null, // it stores the corresponding LegendDataItem
       zoomBtns: [
         {
           label: '1wk',
@@ -207,22 +215,26 @@ export default {
 
       const xAxis = chart.xAxes.push(new am4charts.DateAxis());
       xAxis.renderer.minGridDistance = 50;
-      xAxis.renderer.grid.template.location = 0;
+      xAxis.baseInterval = {
+        timeUnit: 'day',
+        count: 1
+      };
+      xAxis.skipEmptyPeriods = true;
       xAxis.tooltipDateFormat = 'MMMM d, yyyy'; // format for the X cursor marker
 
       const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
       valueAxis.renderer.minGridDistance = 25;
       valueAxis.renderer.minWidth = 35;
+      valueAxis.numberFormatter.numberFormat = '0.00%';
 
       // add cursors and disable zooming
       const cursor = new am4charts.XYCursor();
       cursor.behavior = 'none';
       cursor.xAxis = xAxis;
       cursor.maxTooltipDistance = -1;
-      cursor.fullWidthLineX = true; // when the zoom is too large - the cursor will be a dashed rectangle instead of line, representing the whole horizontal area of this data point
       chart.cursor = cursor;
 
-      const legend = new am4charts.Legend();
+      let legend = new am4charts.Legend();
       legend.position = 'right';
       legend.valign = 'top';
       legend.width = 210;
@@ -238,13 +250,10 @@ export default {
 
       // use square markers instead of the default horizontal lines
       legend.useDefaultMarker = true;
-      const markerTemplate = legend.markers.template;
+      let markerTemplate = legend.markers.template;
       markerTemplate.width = 15;
       markerTemplate.height = 15;
-      const marker = markerTemplate.children.getIndex(0);
-      marker.strokeWidth = 1;
-      marker.strokeOpacity = 1;
-      marker.stroke = am4core.color('#222');
+      let marker = markerTemplate.children.getIndex(0);
       marker.fillOpacity = 1;
 
       // define "active" state
@@ -256,11 +265,38 @@ export default {
       as.properties.fillOpacity = 0.6;
 
       // create a container for our custom legend
-      const legendContainer = am4core.create(this.$refs.legend, am4core.Container);
+      let legendContainer = am4core.create(this.$refs.legend, am4core.Container);
       legendContainer.width = am4core.percent(100);
       legendContainer.height = am4core.percent(100);
       legend.parent = legendContainer;
       this.legend = legend;
+
+      // create another legend for the branches and show their corresponding dash style
+      legend = new am4charts.Legend();
+      legend.position = 'bottom';
+      legend.itemContainers.template.togglable = false;
+      legend.useDefaultMarker = true;
+      markerTemplate = legend.markers.template;
+      markerTemplate.disposeChildren();
+      markerTemplate.width = 35;
+      markerTemplate.height = 16;
+      // add custom Sprite
+      const dash = markerTemplate.createChild(am4core.Line);
+      dash.width = 35;
+      dash.height = 16;
+      dash.strokeWidth = 4;
+      dash.x1 = 0;
+      dash.x2 = 34;
+      dash.y1 = 7;
+      dash.y2 = 7;
+      dash.propertyFields.stroke = 'stroke';
+      dash.propertyFields.strokeDasharray = 'dash';
+
+      legendContainer = am4core.create(this.$refs.legendTwo, am4core.Container);
+      legendContainer.width = am4core.percent(100);
+      legendContainer.height = am4core.percent(100);
+      legend.parent = legendContainer;
+      this.legendTwo = legend;
 
       this.chart = chart;
     },
@@ -305,6 +341,7 @@ export default {
       this.legend.data = [];
 
       const legendItems = {};
+      const branchItems = [];
       // create series
       Object.keys(data).forEach((branch, bIndex) =>
       {
@@ -319,8 +356,14 @@ export default {
           };
           legendItems[sector].branches[branch] = seria;
         });
+        branchItems.push({
+          name: branch,
+          stroke: am4core.color('#C0C0C0'),
+          dash: dashPatterns[bIndex],
+        });
       });
-      this.legend.data = Object.values(legendItems);
+      this.legend.data = Object.values(legendItems); // sectors
+      this.legendTwo.data = branchItems; // branches
     },
     createSeries(bIndex, branch, sIndex, sector, data)
     {
@@ -329,19 +372,22 @@ export default {
       lineSeries.dataFields.valueY = 'value';
       lineSeries.dataFields.branch = 'branch';
       lineSeries.dataFields.sector = 'sector';
-      lineSeries.branch = branch;
+      lineSeries.branch = branch; // we need these both as dataField and direct property - they are used in different way
       lineSeries.sector = sector;
       lineSeries.name = `${branch} - ${sector}`;
       lineSeries.data = data;
 
       lineSeries.adapter.add('tooltipHTML', (txt, target) =>
       {
-        const idx = target.tooltipDataItem.index;
-        if (idx < 0) return '';
+        const currentSeries = target.tooltipDataItem;
+        const idx = currentSeries.index;
+        // don't show tooltip for dimmed series or series from a sector which is different from the currently hovered
+        if (idx < 0 || (this.activeSector && target.tooltipDataItem.sector !== this.activeSector.dataContext.name)) return '';
+        const activeSector = this.activeSector;
         let text = "<table><thead><tr><th style='padding: 0;'>Branch</th><th style='padding: 0 5px;'>Sector</th><th style='padding: 0;'>Contribution</th></tr></thead><tbody>";
         this.chart.series.each(item =>
         {
-          if (!item.isActive)
+          if (!item.isActive && (activeSector ? true : currentSeries.sector === item.sector))
           {
             text += '<tr><td style="padding: 0; color:' + item.stroke.hex + ';">● ' + item.branch +
                     '</td><td style="padding: 0 5px;">' + item.sector +
@@ -376,8 +422,12 @@ export default {
         this.toggleSector(this.legend.data[legendIndex].legendDataItem);
       });
 
+      // "active" is actually used for dimming, while "standout" makes the lines thicker
       let hs = segment.states.create("active");
       hs.properties.strokeOpacity = 0.2;
+      hs.properties.strokeWidth = 2;
+      hs = segment.states.create('standout');
+      hs.properties.strokeWidth = 5;
 
       const bullet = lineSeries.bullets.push(new am4charts.CircleBullet());
       bullet.circle.stroke = am4core.color('#fff');
@@ -400,6 +450,7 @@ export default {
     {
       if (legendItem.toggled)
       {
+        this.activeSector = null;
         // restore all sectors
         legendItem.toggled = false;
         this.legend.dataItems.each(item =>
@@ -409,15 +460,18 @@ export default {
           Object.values(item.dataContext.branches).forEach(series =>
           {
             series.isActive = false;
+            series.bullets.getIndex(0).visible = true;
             series.segments.each(segment =>
             {
               segment.isActive = false;
+              segment.setState('default'); // remove standout
             });
           });
         });
       }
       else
       {
+        this.activeSector = legendItem;
         // dim all other sectors
         this.legend.dataItems.each(item =>
         {
@@ -429,6 +483,7 @@ export default {
             Object.values(item.dataContext.branches).forEach(series =>
             {
               series.isActive = true;
+              series.bullets.getIndex(0).visible = false;
               series.segments.each(segment =>
               {
                 segment.isActive = true;
@@ -443,9 +498,11 @@ export default {
             Object.values(item.dataContext.branches).forEach(series =>
             {
               series.isActive = false;
+              series.bullets.getIndex(0).visible = true;
               series.segments.each(segment =>
               {
                 segment.isActive = false;
+                segment.setState('standout');
               });
             });
           }
