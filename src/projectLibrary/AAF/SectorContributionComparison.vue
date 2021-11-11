@@ -233,60 +233,7 @@ export default {
       // toggle sectors
       legend.itemContainers.template.events.on("hit", (ev) =>
       {
-        const current = ev.target.dataItem;
-        if (current.toggled)
-        {
-          // restore all sectors
-          current.toggled = false;
-          this.legend.dataItems.each(item =>
-          {
-            item.marker.isActive = false;
-            item.label.isActive = false;
-            Object.values(item.dataContext.branches).forEach(series =>
-            {
-              series.isActive = false;
-              series.segments.each(segment =>
-              {
-                segment.isActive = false;
-              });
-            });
-          });
-        }
-        else
-        {
-          // dim all other sectors
-          this.legend.dataItems.each(item =>
-          {
-            if (item !== current)
-            {
-              item.toggled = false;
-              item.marker.isActive = true;
-              item.label.isActive = true;
-              Object.values(item.dataContext.branches).forEach(series =>
-              {
-                series.isActive = true;
-                series.segments.each(segment =>
-                {
-                  segment.isActive = true;
-                });
-              });
-            }
-            else
-            {
-              item.toggled = true;
-              item.marker.isActive = false;
-              item.label.isActive = false;
-              Object.values(item.dataContext.branches).forEach(series =>
-              {
-                series.isActive = false;
-                series.segments.each(segment =>
-                {
-                  segment.isActive = false;
-                });
-              });
-            }
-          });
-        }
+        this.toggleSector(ev.target.dataItem);
       });
 
       // use square markers instead of the default horizontal lines
@@ -341,6 +288,8 @@ export default {
               x: info.effectiveDate,
               value: contrib.contribution,
               percent: 100 * contrib.contribution,
+              branch: branch.branchName,
+              sector: contrib.id,
             });
           });
         });
@@ -378,6 +327,8 @@ export default {
       const lineSeries = this.chart.series.push(new am4charts.LineSeries());
       lineSeries.dataFields.dateX = 'x';
       lineSeries.dataFields.valueY = 'value';
+      lineSeries.dataFields.branch = 'branch';
+      lineSeries.dataFields.sector = 'sector';
       lineSeries.branch = branch;
       lineSeries.sector = sector;
       lineSeries.name = `${branch} - ${sector}`;
@@ -418,6 +369,12 @@ export default {
       // Enable interactions on series segments
       const segment = lineSeries.segments.template;
       segment.interactionsEnabled = true;
+      segment.events.on('hit', (ev) =>
+      {
+        const series = ev.target.dataItem.component.tooltipDataItem;
+        const legendIndex = this.legend.data.findIndex(item => item.name === series.sector);
+        this.toggleSector(this.legend.data[legendIndex].legendDataItem);
+      });
 
       let hs = segment.states.create("active");
       hs.properties.strokeOpacity = 0.2;
@@ -427,11 +384,74 @@ export default {
       bullet.circle.strokeWidth = 2;
       bullet.circle.fill = lineSeries.stroke;
       bullet.scale = 0;
+      bullet.events.on('hit', (ev) =>
+      {
+        const series = ev.target.dataItem;
+        const legendIndex = this.legend.data.findIndex(item => item.name === series.sector);
+        this.toggleSector(this.legend.data[legendIndex].legendDataItem);
+      });
+
       hs = bullet.states.create('hover');
       hs.properties.scale = 1;
 
       return lineSeries;
     },
+    toggleSector(legendItem)
+    {
+      if (legendItem.toggled)
+      {
+        // restore all sectors
+        legendItem.toggled = false;
+        this.legend.dataItems.each(item =>
+        {
+          item.marker.isActive = false;
+          item.label.isActive = false;
+          Object.values(item.dataContext.branches).forEach(series =>
+          {
+            series.isActive = false;
+            series.segments.each(segment =>
+            {
+              segment.isActive = false;
+            });
+          });
+        });
+      }
+      else
+      {
+        // dim all other sectors
+        this.legend.dataItems.each(item =>
+        {
+          if (item !== legendItem)
+          {
+            item.toggled = false;
+            item.marker.isActive = true;
+            item.label.isActive = true;
+            Object.values(item.dataContext.branches).forEach(series =>
+            {
+              series.isActive = true;
+              series.segments.each(segment =>
+              {
+                segment.isActive = true;
+              });
+            });
+          }
+          else
+          {
+            item.toggled = true;
+            item.marker.isActive = false;
+            item.label.isActive = false;
+            Object.values(item.dataContext.branches).forEach(series =>
+            {
+              series.isActive = false;
+              series.segments.each(segment =>
+              {
+                segment.isActive = false;
+              });
+            });
+          }
+        });
+      }
+    }
   },
 };
 </script>
