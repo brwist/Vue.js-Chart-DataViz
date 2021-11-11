@@ -221,6 +221,8 @@ export default {
       };
       xAxis.skipEmptyPeriods = true;
       xAxis.tooltipDateFormat = 'MMMM d, yyyy'; // format for the X cursor marker
+      xAxis.dateFormats.setKey('day', 'MMMM d, yyyy');
+      xAxis.periodChangeDateFormats.setKey('day', 'MMMM d, yyyy');
 
       const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
       valueAxis.renderer.minGridDistance = 25;
@@ -389,7 +391,9 @@ export default {
         {
           if (!item.isActive && (activeSector ? true : currentSeries.sector === item.sector))
           {
-            text += '<tr><td style="padding: 0; color:' + item.stroke.hex + ';">● ' + item.branch +
+            text += '<tr><td style="padding: 0; color:' + item.stroke.hex + ';">' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 10" width="28" height="16" style="vertical-align: middle;">' +
+                    '<line x1="0" x2="28" y1="5" y2="5" stroke="currentColor" stroke-width="2" stroke-dasharray="' + item.strokeDasharray + '"></line></svg> ' + item.branch +
                     '</td><td style="padding: 0 5px;">' + item.sector +
                     '</td><td align="right" style="padding: 0; color:' + item.stroke.hex + ';">' + item.data[idx].percent.toFixed(2) + '%</td></tr>';
           }
