@@ -210,7 +210,7 @@ export const PopupResources = {
         //  the generation of the popup.
 
         //Title of the popup.
-        title: "Sector Contribution Comparison",
+        title: "Sector Return Contribution Comparison",
         //Subtitle of the popup.
         //This may be omitted.
         subTitle: "AmCharts line chart",
@@ -231,13 +231,13 @@ export const PopupResources = {
         //  Various fields used to drive
         //  the details that are displayed for a project in our Library.
         projectID: "AAF",
-        developerName: "",
-        developerEmail: "",
-        developerGithub: "",
-        developerLinkedin: "",
-        projectDescription: "",
-        devTime: "",
-        comments: "",
+        developerName: 'Ivaylo Gelov',
+        developerEmail: 'ivo_gelov@gmx.net',
+        developerGithub: '',
+        developerLinkedin: 'https://www.linkedin.com/in/ivogelov-web-developer',
+        projectDescription: 'Overlapping Histograms Visual',
+        devTime: '6 hours',
+        comments: '',
 
         //Tags that can be given to the project. You could use this to categorise a project. For example give each line chart component a tag "line chart". Or assign a tag that can be used as an additional keyword match when searching for a project.
         tags: ["line chart"],

@@ -221,17 +221,17 @@ export default {
       };
       xAxis.skipEmptyPeriods = true;
       xAxis.tooltipDateFormat = 'MMMM d, yyyy'; // format for the X cursor marker
-      xAxis.dateFormats.setKey('day', 'MMMM d, yyyy');
-      xAxis.periodChangeDateFormats.setKey('day', 'MMMM d, yyyy');
+      xAxis.dateFormats.setKey('day', 'MMM, yyyy');
+      xAxis.periodChangeDateFormats.setKey('day', 'MMM, yyyy');
 
       const valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
       valueAxis.renderer.minGridDistance = 25;
       valueAxis.renderer.minWidth = 35;
-      valueAxis.numberFormatter.numberFormat = '0.00%';
+      valueAxis.numberFormatter.numberFormat = '0%';
 
       // add cursors and disable zooming
       const cursor = new am4charts.XYCursor();
-      cursor.behavior = 'none';
+      cursor.behavior = 'zoomX';
       cursor.xAxis = xAxis;
       cursor.maxTooltipDistance = -1;
       chart.cursor = cursor;
