@@ -4,6 +4,7 @@ import AAC from "@/projectLibrary/AAC/OverlappingHistograms/AAC";
 import OverlappingHistograms from "@/projectLibrary/AAD/OverlappingHistograms/OverlappingHistograms";
 import DailyReturnIndexBottom from "@/projectLibrary/AAE/DailyReturnIndexBottom";
 import SectorContributionComparison from "@/projectLibrary/AAF/SectorContributionComparison";
+import SectorAttribution from "@/projectLibrary/AAG/SectorAttribution";
 
 
 // Popup Configurations that define all of the potential
@@ -235,8 +236,46 @@ export const PopupResources = {
         developerEmail: 'ivo_gelov@gmx.net',
         developerGithub: '',
         developerLinkedin: 'https://www.linkedin.com/in/ivogelov-web-developer',
-        projectDescription: 'Overlapping Histograms Visual',
+        projectDescription: 'Sector Contribution Comparison',
         devTime: '6 hours',
+        comments: '',
+
+        //Tags that can be given to the project. You could use this to categorise a project. For example give each line chart component a tag "line chart". Or assign a tag that can be used as an additional keyword match when searching for a project.
+        tags: ["line chart"],
+    },
+    AAG: {
+        //POPUP CONFIGURATION
+        //  Various elements used to drive
+        //  the generation of the popup.
+
+        //Title of the popup.
+        title: "Sector Attribution",
+        //Subtitle of the popup.
+        //This may be omitted.
+        subTitle: "AmCharts line chart",
+        //Component which will be rendered
+        //inside the popup. Ensure that the
+        //component is imported.
+        component: SectorAttribution,
+
+        //Optional custom sizing parameters.
+        //If omitted then will default to
+        //pre-specified values.
+        height: 700,
+        width: 1000,
+        minHeight: 400,
+        minWidth: 600,
+
+        //LIBRARY ITEM CONFIGURATION
+        //  Various fields used to drive
+        //  the details that are displayed for a project in our Library.
+        projectID: "AAG",
+        developerName: 'Ivaylo Gelov',
+        developerEmail: 'ivo_gelov@gmx.net',
+        developerGithub: '',
+        developerLinkedin: 'https://www.linkedin.com/in/ivogelov-web-developer',
+        projectDescription: 'Sector Attribution',
+        devTime: '',
         comments: '',
 
         //Tags that can be given to the project. You could use this to categorise a project. For example give each line chart component a tag "line chart". Or assign a tag that can be used as an additional keyword match when searching for a project.
