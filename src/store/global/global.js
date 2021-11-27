@@ -4,6 +4,19 @@ const SET_SNACKBAR = "SET_SNACKBAR";
 const SET_POPUPS = "SET_POPUPS";
 const PUSH_POPUP = "PUSH_POPUP";
 
+/**
+ * Generates pseudo UUID for performance reasons
+ */
+export function UUID()
+{
+  return new Date()
+    .getTime()
+    .toString()
+    .concat(performance.now())
+    .concat(Math.random())
+    .concat(Math.random());
+} 
+
 export const moduleGlobal = {
     namespaced: true,
     state: () => ({
@@ -64,7 +77,7 @@ export const moduleGlobal = {
         //pushPopup takes a config object, defined
         pushPopup({ commit }, popupConfig ){
             let popup = {
-                id: crypto.randomUUID(),
+                id: UUID(), // crypto.randomUUID(),
                 ...popupConfig
                 //Should I include something about the selected state?
             };

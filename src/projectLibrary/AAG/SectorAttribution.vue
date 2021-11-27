@@ -57,6 +57,7 @@ import moment from "moment";
 import {mapActions} from "vuex";
 
 const paletteAdobe = [
+  '#222222',
   '#00C0C7',
   '#DA3490',
   '#47E26F',
@@ -109,9 +110,11 @@ export default {
       skipPoll: true,
       opIDs: [],
       chart: null,
+      chartTitle: null,
       legend: null, // sectors
-      legendTwo: null, // branches
-      activeSector: null, // it stores the corresponding LegendDataItem
+      legendTwo: null, // line kinds
+      dimmedSectors: {},
+      dimmedKinds: {},
       zoomBtns: [
         {
           label: '1wk',
@@ -154,6 +157,7 @@ export default {
           unit: 'years'
         },
       ],
+      branchName: '',
     };
   },
   computed: {
@@ -169,6 +173,7 @@ export default {
       deep: true,
       handler(newVal)
       {
+        this.branchName = newVal.data.attributionSectorAnnuallyMetrics.branchName;
         this.updateChart(this.wrangleData(newVal));
       }
     },
@@ -182,15 +187,18 @@ export default {
     this.createPlot(); //create chart element
     // this executes when component is in dev mode. Since no resources will be selected, we need the mounted hook to call initChart
     if (this.dev) {
-      this.updateChart(this.wrangleData(testData)); //wrangle data of static testing data object into chart ready format
-    } else {  // this executes when component is not in dev mode
+      this.branchName = testData.data.attributionSectorAnnuallyMetrics.branchName;
+      // wrangle data of static testing data object into chart ready format
+      const wrangled = this.wrangleData(testData);
+      this.updateChart(wrangled);
+    } else { // this executes when component is not in dev mode
       if (this.selectedBranches.length > 0) {
         this.$apollo.queries.batchGetBranchMetrics.setVariables({
           branchNames: this.selectedBranches
         });
         this.skipQuery = false;
       } else {
-        //send notification to user that they need to select branches
+        // send notification to user that they need to select branches
         this.pushSnackbar({
           text: "The SectorContributionComparison component needs selected branches",
           color: "error"
@@ -229,12 +237,17 @@ export default {
       valueAxis.renderer.minWidth = 35;
       valueAxis.numberFormatter.numberFormat = '0%';
 
-      // add cursors and disable zooming
+      // add cursors and enable zooming
       const cursor = new am4charts.XYCursor();
       cursor.behavior = 'zoomX';
       cursor.xAxis = xAxis;
       cursor.maxTooltipDistance = -1;
       chart.cursor = cursor;
+
+      const title = chart.titles.create();
+      title.fontSize = 25;
+      title.marginBottom = 20;
+      this.chartTitle = title;
 
       let legend = new am4charts.Legend();
       legend.position = 'right';
@@ -261,7 +274,7 @@ export default {
       // define "active" state
       let as = marker.states.create('active');
       as.properties.fillOpacity = 0.1;
-      const labelTemplate = legend.labels.template;
+      let labelTemplate = legend.labels.template;
       labelTemplate.fillOpacity = 1;
       as = labelTemplate.states.create('active');
       as.properties.fillOpacity = 0.6;
@@ -273,16 +286,30 @@ export default {
       legend.parent = legendContainer;
       this.legend = legend;
 
-      // create another legend for the branches and show their corresponding dash style
+      // create another legend for the line kinds and show their corresponding dash style
       legend = new am4charts.Legend();
       legend.position = 'bottom';
       legend.itemContainers.template.togglable = false;
       legend.useDefaultMarker = true;
+
+      // toggle kinds
+      legend.itemContainers.template.events.on("hit", (ev) =>
+      {
+        this.toggleKind(ev.target.dataItem);
+      });
+
       markerTemplate = legend.markers.template;
       markerTemplate.disposeChildren();
       markerTemplate.width = 35;
       markerTemplate.height = 16;
-      // add custom Sprite
+
+      // define "active" state
+      labelTemplate = legend.labels.template;
+      labelTemplate.fillOpacity = 1;
+      as = labelTemplate.states.create('active');
+      as.properties.fillOpacity = 0.5;
+
+      // add custom Sprite to display the dashing styles in the legend
       const dash = markerTemplate.createChild(am4core.Line);
       dash.width = 35;
       dash.height = 16;
@@ -310,25 +337,70 @@ export default {
     },
     wrangleData(primaryJson)
     {
-      // we create a nested structure - branch/sector/dataPointsArray
-      const result = {};
-      let branchNode;
-      primaryJson.data.batchContributionMetrics.forEach(branch =>
+      // we create a nested structure - kind/sector/dataPointsArray
+      const result = {
+        'Attribution':
+            {
+              'Total att.': [],
+            },
+        'Selection effect':
+            {
+              'Total att.': [],
+            },
+        'Allocation effect':
+            {
+              'Total att.': [],
+            },
+      };
+      const branch = primaryJson.data.attributionSectorAnnuallyMetrics;
+      branch.historicalAttributions.forEach(info =>
       {
-        branch.historicalContributions.forEach(info =>
+        // first create Totals
+        result['Attribution']['Total att.'].push({
+          x: info.effectiveDate,
+          value: info.total_attribution_long,
+          effect: 'Att.',
+          sector: 'Total att.',
+        });
+        result['Selection effect']['Total att.'].push({
+          x: info.effectiveDate,
+          value: info.total_selection_effect_long,
+          effect: 'Sel. eff.',
+          sector: 'Total att.',
+        });
+        result['Allocation effect']['Total att.'].push({
+          x: info.effectiveDate,
+          value: info.total_allocation_effect_long,
+          effect: 'All. eff.',
+          sector: 'Total att.',
+        });
+
+        // then iterate over other segments
+        info.segment_attributions_long.forEach(contrib =>
         {
-          if (!result[branch.branchName]) result[branch.branchName] = {};
-          branchNode = result[branch.branchName];
-          info.contributions.forEach(contrib =>
+          if (!result['Attribution'][contrib.segmentID])
           {
-            if (!branchNode[contrib.id]) branchNode[contrib.id] = [];
-            branchNode[contrib.id].push({
-              x: info.effectiveDate,
-              value: contrib.contribution,
-              percent: 100 * contrib.contribution,
-              branch: branch.branchName,
-              sector: contrib.id,
-            });
+            result['Attribution'][contrib.segmentID] = [];
+            result['Selection effect'][contrib.segmentID] = [];
+            result['Allocation effect'][contrib.segmentID] = [];
+          }
+          result['Attribution'][contrib.segmentID].push({
+            x: info.effectiveDate,
+            value: contrib.totalAttribution,
+            effect: 'Att.',
+            sector: contrib.segmentID,
+          });
+          result['Selection effect'][contrib.segmentID].push({
+            x: info.effectiveDate,
+            value: contrib.selectionEffect,
+            effect: 'Sel. eff.',
+            sector: contrib.segmentID,
+          });
+          result['Allocation effect'][contrib.segmentID].push({
+            x: info.effectiveDate,
+            value: contrib.allocationEffect,
+            effect: 'All. eff.',
+            sector: contrib.segmentID,
           });
         });
       });
@@ -336,47 +408,49 @@ export default {
     },
     updateChart(data)
     {
+      this.chartTitle.text = this.branchName + ' Attribution';
       const series = this.chart.series;
       // we have to reset the series - because we do not recreate the chart when updating the values (to speedup the things a little)
       while (series.length > 0) series.removeIndex(0).dispose();
       // clear the legend
       this.legend.data = [];
+      this.legendTwo.data = [];
+      this.dimmedSectors = {};
+      this.dimmedKinds = {};
 
       const legendItems = {};
-      const branchItems = [];
+      const kindItems = [];
       // create series
-      Object.keys(data).forEach((branch, bIndex) =>
+      Object.keys(data).forEach((kind, kIndex) =>
       {
-        const branchNode = data[branch];
-        Object.keys(branchNode).forEach((sector, sIndex) =>
+        const kindNode = data[kind];
+        kindItems.push({
+          name: kind,
+          stroke: am4core.color('#111'),
+          dash: dashPatterns[kIndex],
+        });
+        Object.keys(kindNode).forEach((sector, sIndex) =>
         {
-          const seria = this.createSeries(bIndex, branch, sIndex, sector, branchNode[sector].sort((a, b) => a.x < b.x ? -1 : a.x > b.x ? +1 : 0)); // we must sort data points by date, because amCharts does not do it for us
+          this.createSeries(kIndex, kind, sIndex, sector, kindNode[sector].sort((a, b) => a.x < b.x ? -1 : a.x > b.x ? +1 : 0)); // we must sort data points by date, because amCharts does not do it for us
           if (!legendItems[sector]) legendItems[sector] = {
             name: sector,
             fill: am4core.color(paletteAdobe[sIndex % paletteAdobe.length]),
-            branches: {},
           };
-          legendItems[sector].branches[branch] = seria;
-        });
-        branchItems.push({
-          name: branch,
-          stroke: am4core.color('#C0C0C0'),
-          dash: dashPatterns[bIndex],
         });
       });
       this.legend.data = Object.values(legendItems); // sectors
-      this.legendTwo.data = branchItems; // branches
+      this.legendTwo.data = kindItems; // kinds
     },
-    createSeries(bIndex, branch, sIndex, sector, data)
+    createSeries(kIndex, kind, sIndex, sector, data)
     {
       const lineSeries = this.chart.series.push(new am4charts.LineSeries());
       lineSeries.dataFields.dateX = 'x';
       lineSeries.dataFields.valueY = 'value';
-      lineSeries.dataFields.branch = 'branch';
+      lineSeries.dataFields.kind = 'kind'; // these are needed for the HTML tooltip to properly determine which series to incldue
       lineSeries.dataFields.sector = 'sector';
-      lineSeries.branch = branch; // we need these both as dataField and direct property - they are used in different way
+      lineSeries.kind = kind;
       lineSeries.sector = sector;
-      lineSeries.name = `${branch} - ${sector}`;
+      lineSeries.name = `${kind} - ${sector}`;
       lineSeries.data = data;
 
       lineSeries.adapter.add('tooltipHTML', (txt, target) =>
@@ -384,21 +458,40 @@ export default {
         const currentSeries = target.tooltipDataItem;
         const idx = currentSeries.index;
         // don't show tooltip for dimmed series or series from a sector which is different from the currently hovered
-        if (idx < 0 || (this.activeSector && target.tooltipDataItem.sector !== this.activeSector.dataContext.name)) return '';
-        const activeSector = this.activeSector;
-        let text = "<table><thead><tr><th style='padding: 0;'>Branch</th><th style='padding: 0 5px;'>Sector</th><th style='padding: 0;'>Contribution</th></tr></thead><tbody>";
+        if (idx < 0) return '';
+        let sectorName = '';
+        let sectorColor = '';
+        let text = '';
+        let footer = '';
         this.chart.series.each(item =>
         {
-          if (!item.isActive && (activeSector ? true : currentSeries.sector === item.sector))
+          if (item.sector === 'Total att.' && currentSeries.sector !== item.sector)
           {
-            text += '<tr><td style="padding: 0; color:' + item.stroke.hex + ';">' +
-                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 10" width="28" height="16" style="vertical-align: middle;">' +
-                    '<line x1="0" x2="28" y1="5" y2="5" stroke="currentColor" stroke-width="2" stroke-dasharray="' + item.strokeDasharray + '"></line></svg> ' + item.branch +
-                    '</td><td style="padding: 0 5px;">' + item.sector +
-                    '</td><td align="right" style="padding: 0; color:' + item.stroke.hex + ';">' + item.data[idx].percent.toFixed(2) + '%</td></tr>';
+            switch (item.kind)
+            {
+              case 'Attribution':
+                footer += '<tr align="right"><td>Total attribution</td><td style="padding: 0 0 0 6px;">' + (100 * item.data[idx].value).toFixed(2) + '%</td></tr>';
+                break;
+              case 'Selection effect':
+                footer += '<tr align="right"><td>Selection effect</td><td style="padding: 0 0 0 6px;">' + (100 * item.data[idx].value).toFixed(2) + '%</td></tr>';
+                break;
+              case 'Allocation effect':
+                footer += '<tr align="right"><td>Allocation effect</td><td style="padding: 0 0 0 6px;">' + (100 * item.data[idx].value).toFixed(2) + '%</td></tr>';
+                break;
+            }
+          }
+          if (!item.isActive && currentSeries.sector === item.sector)
+          {
+            sectorName = item.sector;
+            sectorColor = item.stroke.hex;
+            text += '<tr><td style="padding: 0;">' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 10" width="28" height="16" style="vertical-align: middle; color:' + item.stroke.hex + ';">' +
+                    '<line x1="0" x2="28" y1="5" y2="5" stroke="currentColor" stroke-width="2" stroke-dasharray="' + item.strokeDasharray + '"></line></svg> &nbsp; ' + item.kind +
+                    '</td><td align="right" style="padding: 0 0 0 6px; color:' + item.stroke.hex + ';">' + (100 * item.data[idx].value).toFixed(2) + '%</td></tr>';
           }
         });
-        text += '</tbody></table>';
+        text = "<table><caption style='font-weight: bold; font-size: 120%; color:" + sectorColor + ";'>Sector: " + sectorName + "</caption><tbody>" + text + '</tbody>' +
+               (footer ? '<tfoot><tr><td colspan="2" style="padding: 6px 0;"><hr></td></tr>' + footer + '</tfoot>' : '') + '</table>';
         return text;
       });
       lineSeries.tooltip.fontSize = 12;
@@ -410,8 +503,8 @@ export default {
       lineSeries.tooltip.defaultState.transitionDuration = 0;
       lineSeries.tooltip.hiddenState.transitionDuration = 0;
 
-      // use a dash pattern for different branches
-      lineSeries.strokeDasharray = dashPatterns[bIndex];
+      // use a dash pattern for different line kinds
+      lineSeries.strokeDasharray = dashPatterns[kIndex];
       lineSeries.strokeWidth = 2;
       lineSeries.strokeOpacity = 1;
       lineSeries.stroke = am4core.color(paletteAdobe[sIndex % paletteAdobe.length]);
@@ -422,14 +515,16 @@ export default {
       segment.events.on('hit', (ev) =>
       {
         const series = ev.target.dataItem.component.tooltipDataItem;
-        const legendIndex = this.legend.data.findIndex(item => item.name === series.sector);
+        let legendIndex = this.legend.data.findIndex(item => item.name === series.sector);
         this.toggleSector(this.legend.data[legendIndex].legendDataItem);
+        legendIndex = this.legendTwo.data.findIndex(item => item.name === series.kind);
+        this.toggleKind(this.legendTwo.data[legendIndex].legendDataItem);
       });
 
       // "active" is actually used for dimming, while "standout" makes the lines thicker
       let hs = segment.states.create("active");
-      hs.properties.strokeOpacity = 0.2;
-      hs.properties.strokeWidth = 2;
+      hs.properties.strokeOpacity = 0.15;
+      hs.properties.strokeWidth = 1;
       hs = segment.states.create('standout');
       hs.properties.strokeWidth = 5;
 
@@ -452,67 +547,33 @@ export default {
     },
     toggleSector(legendItem)
     {
-      if (legendItem.toggled)
+      this.updateLegend(legendItem, this.dimmedSectors);
+    },
+    toggleKind(legendItem)
+    {
+      this.updateLegend(legendItem, this.dimmedKinds);
+    },
+    updateLegend(item, dimmedList)
+    {
+      const active = item.toggled = !item.toggled;
+      item.marker.isActive = active;
+      item.label.isActive = active;
+      dimmedList[item.dataContext.name] = active;
+      this.updateDimming();
+    },
+    updateDimming()
+    {
+      this.chart.series.each(series =>
       {
-        this.activeSector = null;
-        // restore all sectors
-        legendItem.toggled = false;
-        this.legend.dataItems.each(item =>
+        const dimmed = this.dimmedSectors[series.sector] || this.dimmedKinds[series.kind];
+        series.isActive = dimmed;
+        series.bullets.getIndex(0).visible = !dimmed;
+        series.segments.each(segment =>
         {
-          item.marker.isActive = false;
-          item.label.isActive = false;
-          Object.values(item.dataContext.branches).forEach(series =>
-          {
-            series.isActive = false;
-            series.bullets.getIndex(0).visible = true;
-            series.segments.each(segment =>
-            {
-              segment.isActive = false;
-              segment.setState('default'); // remove standout
-            });
-          });
+          segment.isActive = dimmed;
         });
-      }
-      else
-      {
-        this.activeSector = legendItem;
-        // dim all other sectors
-        this.legend.dataItems.each(item =>
-        {
-          if (item !== legendItem)
-          {
-            item.toggled = false;
-            item.marker.isActive = true;
-            item.label.isActive = true;
-            Object.values(item.dataContext.branches).forEach(series =>
-            {
-              series.isActive = true;
-              series.bullets.getIndex(0).visible = false;
-              series.segments.each(segment =>
-              {
-                segment.isActive = true;
-              });
-            });
-          }
-          else
-          {
-            item.toggled = true;
-            item.marker.isActive = false;
-            item.label.isActive = false;
-            Object.values(item.dataContext.branches).forEach(series =>
-            {
-              series.isActive = false;
-              series.bullets.getIndex(0).visible = true;
-              series.segments.each(segment =>
-              {
-                segment.isActive = false;
-                segment.setState('standout');
-              });
-            });
-          }
-        });
-      }
-    }
+      });
+    },
   },
 };
 </script>
