@@ -490,8 +490,8 @@ export default {
                     '</td><td align="right" style="padding: 0 0 0 6px; color:' + item.stroke.hex + ';">' + (100 * item.data[idx].value).toFixed(2) + '%</td></tr>';
           }
         });
-        text = "<table><caption style='font-weight: bold; font-size: 120%; color:" + sectorColor + ";'>Sector: " + sectorName + "</caption><tbody>" + text + '</tbody>' +
-               (footer ? '<tfoot><tr><td colspan="2" style="padding: 6px 0;"><hr></td></tr>' + footer + '</tfoot>' : '') + '</table>';
+        if (text) text = "<table><caption style='font-weight: bold; font-size: 120%; color:" + sectorColor + ";'>Sector: " + sectorName + "</caption><tbody>" + text + '</tbody>' +
+          (footer ? '<tfoot><tr><td colspan="2" style="padding: 6px 0;"><hr></td></tr>' + footer + '</tfoot>' : '') + '</table>';
         return text;
       });
       lineSeries.tooltip.fontSize = 12;
@@ -566,11 +566,11 @@ export default {
       this.chart.series.each(series =>
       {
         const dimmed = this.dimmedSectors[series.sector] || this.dimmedKinds[series.kind];
-        series.isActive = dimmed;
+        series[dimmed ? 'hide' : 'show']();
         series.bullets.getIndex(0).visible = !dimmed;
         series.segments.each(segment =>
         {
-          segment.isActive = dimmed;
+          segment[dimmed ? 'hide' : 'show']();
         });
       });
     },
