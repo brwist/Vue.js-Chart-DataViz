@@ -2,752 +2,756 @@
   "data": {
     "attributionSectorAnnuallyMetrics": {
       "branchName": "Branch A",
+      "benchmarkName": "Benchmark A",
       "historicalAttributions": [
         {
-          "effectiveDate": "2021-11-24",
-          "total_attribution_long": 0.24594337669532096,
-          "total_selection_effect_long": 0.20122205520384684,
-          "total_allocation_effect_long": 0.03722985379575294,
-          "total_active_return_long": 0.2462179015486683,
-          "segment_attributions_long": [
-            {
-              "segmentID": "N.A.",
-              "selectionEffect": 0.0007781736352525659,
-              "allocationEffect": 0.0011551305605062012,
-              "activeReturn": 0.0012067541201719045,
-              "totalAttribution": 0.0011551305605062012
-            },
-            {
-              "segmentID": "Consumer Staples",
-              "selectionEffect": 0.008514194839760902,
-              "allocationEffect": 0.007961215917464015,
-              "activeReturn": 0.015500791558403337,
-              "totalAttribution": 0.007961215917464015
-            },
-            {
-              "segmentID": "Utilities",
-              "selectionEffect": -0.0018909099091851678,
-              "allocationEffect": 0.004110719496214221,
-              "activeReturn": -0.0016078410002657861,
-              "totalAttribution": 0.004110719496214221
-            },
-            {
-              "segmentID": "Health Care",
-              "selectionEffect": 0.004050448169685472,
-              "allocationEffect": 0.01047682257808491,
-              "activeReturn": 0.020713140830902033,
-              "totalAttribution": 0.01047682257808491
-            },
-            {
-              "segmentID": "Communication Services",
-              "selectionEffect": 0.0033618813504765477,
-              "allocationEffect": -0.0007513852617038186,
-              "activeReturn": 0.003951608136857576,
-              "totalAttribution": -0.0007513852617038186
-            },
-            {
-              "segmentID": "Energy",
-              "selectionEffect": 0.005585796802129561,
-              "allocationEffect": 0.002860867655395616,
-              "activeReturn": 0.005643352581889749,
-              "totalAttribution": 0.002860867655395616
-            },
-            {
-              "segmentID": "Real Estate",
-              "selectionEffect": 0.021465066042116954,
-              "allocationEffect": -0.014186800586886816,
-              "activeReturn": 0.0007045386423916167,
-              "totalAttribution": -0.014186800586886816
-            },
-            {
-              "segmentID": "Materials",
-              "selectionEffect": 0.036681634926355455,
-              "allocationEffect": -0.002141719221299021,
-              "activeReturn": 0.03475502314128698,
-              "totalAttribution": -0.002141719221299021
-            },
-            {
-              "segmentID": "Financials",
-              "selectionEffect": 0.041033437579590215,
-              "allocationEffect": 0.029945690052125107,
-              "activeReturn": 0.06737937228660607,
-              "totalAttribution": 0.029945690052125107
-            },
-            {
-              "segmentID": "Consumer Discretionary",
-              "selectionEffect": 0.019478013377756787,
-              "allocationEffect": 0.004698054152706188,
-              "activeReturn": 0.028108457342041815,
-              "totalAttribution": 0.004698054152706188
-            },
-            {
-              "segmentID": "Industrials",
-              "selectionEffect": 0.03915762136276024,
-              "allocationEffect": -0.0048085017114075645,
-              "activeReturn": 0.03460735732220632,
-              "totalAttribution": -0.0048085017114075645
-            },
-            {
-              "segmentID": "Information Technology",
-              "selectionEffect": 0.009959505276324387,
-              "allocationEffect": -0.0018477017569406007,
-              "activeReturn": 0.01413658720735067,
-              "totalAttribution": -0.0018477017569406007
-            }
-          ]
-        },
-        {
           "effectiveDate": "2019-12-31",
-          "total_attribution_long": 0.12149315162786167,
-          "total_selection_effect_long": 0.11634786938485409,
-          "total_allocation_effect_long": 0.00460903127431278,
-          "total_active_return_long": 0.12149314308577841,
-          "segment_attributions_long": [
-            {
-              "segmentID": "Consumer Staples",
-              "selectionEffect": 0.007105338961887142,
-              "allocationEffect": -0.004790507910948927,
-              "activeReturn": 0.0023427244206253306,
-              "totalAttribution": -0.004790507910948927
-            },
+          "totalAttributionLong": 0.121493,
+          "totalSelectionEffectLong": 0.116348,
+          "totalAllocationEffectLong": 0.004609,
+          "totalActiveReturnLong": 0.121493,
+          "segmentAttributionsLong": [
             {
               "segmentID": "N.A.",
-              "selectionEffect": 0.0011730982263449263,
-              "allocationEffect": 0.0003178859671248979,
-              "activeReturn": 0.004053293222174181,
-              "totalAttribution": 0.0003178859671248979
+              "selectionEffect": 0.001173,
+              "allocationEffect": 0.000318,
+              "activeReturn": 0.004053,
+              "totalAttribution": 0.001491
             },
             {
               "segmentID": "Utilities",
-              "selectionEffect": -0.0057782004163217104,
-              "allocationEffect": 0.008895373985705168,
-              "activeReturn": 0.0010188852677845972,
-              "totalAttribution": 0.008895373985705168
-            },
-            {
-              "segmentID": "Health Care",
-              "selectionEffect": 0.017798421500065498,
-              "allocationEffect": 0.00615416063806018,
-              "activeReturn": 0.03200864995515773,
-              "totalAttribution": 0.00615416063806018
-            },
-            {
-              "segmentID": "Communication Services",
-              "selectionEffect": 0.00013994908128078798,
-              "allocationEffect": -0.01052641142749533,
-              "activeReturn": -0.02882710078811135,
-              "totalAttribution": -0.01052641142749533
-            },
-            {
-              "segmentID": "Energy",
-              "selectionEffect": 0.0035035519686634764,
-              "allocationEffect": 0.0030911320041915324,
-              "activeReturn": -0.006602286314559724,
-              "totalAttribution": 0.0030911320041915324
-            },
-            {
-              "segmentID": "Real Estate",
-              "selectionEffect": -0.005453985349612278,
-              "allocationEffect": -0.001223222509497801,
-              "activeReturn": -0.00706238959595995,
-              "totalAttribution": -0.001223222509497801
+              "selectionEffect": -0.005778,
+              "allocationEffect": 0.008895,
+              "activeReturn": 0.001019,
+              "totalAttribution": 0.003066
             },
             {
               "segmentID": "Materials",
-              "selectionEffect": 0.008830880947137576,
-              "allocationEffect": -0.005845172147356026,
-              "activeReturn": -0.006855945274029884,
-              "totalAttribution": -0.005845172147356026
+              "selectionEffect": 0.008831,
+              "allocationEffect": -0.005845,
+              "activeReturn": -0.006856,
+              "totalAttribution": 0.002934
             },
             {
-              "segmentID": "Financials",
-              "selectionEffect": 0.010379200702146596,
-              "allocationEffect": 0.007372745898834854,
-              "activeReturn": 0.01881884417080526,
-              "totalAttribution": 0.007372745898834854
+              "segmentID": "Real Estate",
+              "selectionEffect": -0.005454,
+              "allocationEffect": -0.001223,
+              "activeReturn": -0.007062,
+              "totalAttribution": -0.006671
             },
             {
               "segmentID": "Consumer Discretionary",
-              "selectionEffect": 0.013929687993804896,
-              "allocationEffect": 0.0006727590708095477,
-              "activeReturn": 0.006487887990116903,
-              "totalAttribution": 0.0006727590708095477
+              "selectionEffect": 0.01393,
+              "allocationEffect": 0.000673,
+              "activeReturn": 0.006488,
+              "totalAttribution": 0.014612
             },
             {
-              "segmentID": "Industrials",
-              "selectionEffect": 0.03527757327960557,
-              "allocationEffect": -0.004210071902743251,
-              "activeReturn": 0.03909271446850737,
-              "totalAttribution": -0.004210071902743251
+              "segmentID": "Consumer Staples",
+              "selectionEffect": 0.007105,
+              "allocationEffect": -0.004791,
+              "activeReturn": 0.002343,
+              "totalAttribution": 0.002281
             },
             {
               "segmentID": "Information Technology",
-              "selectionEffect": 0.02630011077986083,
-              "allocationEffect": 0.004928350802992698,
-              "activeReturn": 0.06380756632610574,
-              "totalAttribution": 0.004928350802992698
+              "selectionEffect": 0.0263,
+              "allocationEffect": 0.004928,
+              "activeReturn": 0.063808,
+              "totalAttribution": 0.031358
+            },
+            {
+              "segmentID": "Financials",
+              "selectionEffect": 0.010379,
+              "allocationEffect": 0.007373,
+              "activeReturn": 0.018819,
+              "totalAttribution": 0.017828
+            },
+            {
+              "segmentID": "Health Care",
+              "selectionEffect": 0.017798,
+              "allocationEffect": 0.006154,
+              "activeReturn": 0.032009,
+              "totalAttribution": 0.024062
+            },
+            {
+              "segmentID": "Communication Services",
+              "selectionEffect": 0.00014,
+              "allocationEffect": -0.010526,
+              "activeReturn": -0.028827,
+              "totalAttribution": -0.010388
+            },
+            {
+              "segmentID": "Industrials",
+              "selectionEffect": 0.035278,
+              "allocationEffect": -0.00421,
+              "activeReturn": 0.039093,
+              "totalAttribution": 0.030919
+            },
+            {
+              "segmentID": "Energy",
+              "selectionEffect": 0.003504,
+              "allocationEffect": 0.003091,
+              "activeReturn": -0.006602,
+              "totalAttribution": 0.006606
             }
           ]
         },
         {
           "effectiveDate": "2014-12-31",
-          "total_attribution_long": 0.07861933927458975,
-          "total_selection_effect_long": 0.016429284401282773,
-          "total_allocation_effect_long": 0.061184831869479206,
-          "total_active_return_long": 0.0786193425720969,
-          "segment_attributions_long": [
-            {
-              "segmentID": "Consumer Staples",
-              "selectionEffect": 0.006442559765798217,
-              "allocationEffect": 0.0006766751875160182,
-              "activeReturn": 0.0041448370160452885,
-              "totalAttribution": 0.0006766751875160182
-            },
+          "totalAttributionLong": 0.078619,
+          "totalSelectionEffectLong": 0.016429,
+          "totalAllocationEffectLong": 0.061185,
+          "totalActiveReturnLong": 0.078619,
+          "segmentAttributionsLong": [
             {
               "segmentID": "N.A.",
-              "selectionEffect": -0.0003000851162371365,
-              "allocationEffect": 0.0016327572229613008,
-              "activeReturn": 0.0009882734499835344,
-              "totalAttribution": 0.0016327572229613008
+              "selectionEffect": -0.0003,
+              "allocationEffect": 0.001633,
+              "activeReturn": 0.000988,
+              "totalAttribution": 0.001332
             },
             {
               "segmentID": "Utilities",
-              "selectionEffect": 0.006057161163423697,
-              "allocationEffect": 0.00011404665965408789,
-              "activeReturn": 0.0021152333951901525,
-              "totalAttribution": 0.00011404665965408789
-            },
-            {
-              "segmentID": "Health Care",
-              "selectionEffect": 0.0076265800956283325,
-              "allocationEffect": 0.0039732913450054586,
-              "activeReturn": 0.01431024334768316,
-              "totalAttribution": 0.0039732913450054586
-            },
-            {
-              "segmentID": "Communication Services",
-              "selectionEffect": -0.0048757595827005895,
-              "allocationEffect": 0.0006325902388382154,
-              "activeReturn": 0.004388061689146072,
-              "totalAttribution": 0.0006325902388382154
-            },
-            {
-              "segmentID": "Energy",
-              "selectionEffect": 0.0110647268515911,
-              "allocationEffect": 0.016361484357504397,
-              "activeReturn": 0.01806816147393997,
-              "totalAttribution": 0.016361484357504397
-            },
-            {
-              "segmentID": "Real Estate",
-              "selectionEffect": -0.0016182853253547957,
-              "allocationEffect": -0.006389900868032039,
-              "activeReturn": -0.0075665587285596025,
-              "totalAttribution": -0.006389900868032039
+              "selectionEffect": 0.006057,
+              "allocationEffect": 0.000114,
+              "activeReturn": 0.002115,
+              "totalAttribution": 0.006172
             },
             {
               "segmentID": "Materials",
-              "selectionEffect": 0.012256212563265034,
-              "allocationEffect": 0.012019776967375773,
-              "activeReturn": 0.01981880473281472,
-              "totalAttribution": 0.012019776967375773
+              "selectionEffect": 0.012256,
+              "allocationEffect": 0.01202,
+              "activeReturn": 0.019819,
+              "totalAttribution": 0.024423
             },
             {
-              "segmentID": "Financials",
-              "selectionEffect": -0.001252273668731596,
-              "allocationEffect": 0.011453910768446818,
-              "activeReturn": 0.019193853552088802,
-              "totalAttribution": 0.011453910768446818
-            },
-            {
-              "segmentID": "Consumer Discretionary",
-              "selectionEffect": -0.01896212808679154,
-              "allocationEffect": 0.003986487379735948,
-              "activeReturn": -0.010888766324948285,
-              "totalAttribution": 0.003986487379735948
+              "segmentID": "Real Estate",
+              "selectionEffect": -0.001618,
+              "allocationEffect": -0.00639,
+              "activeReturn": -0.007567,
+              "totalAttribution": -0.007998
             },
             {
               "segmentID": "Industrials",
-              "selectionEffect": -0.0016335948838093195,
-              "allocationEffect": 0.002006570869195645,
-              "activeReturn": -0.005632908178285545,
-              "totalAttribution": 0.002006570869195645
+              "selectionEffect": -0.001634,
+              "allocationEffect": 0.002007,
+              "activeReturn": -0.005633,
+              "totalAttribution": 0.00037
+            },
+            {
+              "segmentID": "Consumer Staples",
+              "selectionEffect": 0.006443,
+              "allocationEffect": 0.000677,
+              "activeReturn": 0.004145,
+              "totalAttribution": 0.007124
+            },
+            {
+              "segmentID": "Consumer Discretionary",
+              "selectionEffect": -0.018962,
+              "allocationEffect": 0.003986,
+              "activeReturn": -0.010889,
+              "totalAttribution": -0.015051
             },
             {
               "segmentID": "Information Technology",
-              "selectionEffect": 0.002929279238734095,
-              "allocationEffect": 0.013546210305118933,
-              "activeReturn": 0.0176777756220432,
-              "totalAttribution": 0.013546210305118933
+              "selectionEffect": 0.002929,
+              "allocationEffect": 0.013546,
+              "activeReturn": 0.017678,
+              "totalAttribution": 0.016515
+            },
+            {
+              "segmentID": "Financials",
+              "selectionEffect": -0.001252,
+              "allocationEffect": 0.011454,
+              "activeReturn": 0.019194,
+              "totalAttribution": 0.010187
+            },
+            {
+              "segmentID": "Health Care",
+              "selectionEffect": 0.007627,
+              "allocationEffect": 0.003973,
+              "activeReturn": 0.01431,
+              "totalAttribution": 0.01163
+            },
+            {
+              "segmentID": "Communication Services",
+              "selectionEffect": -0.004876,
+              "allocationEffect": 0.000633,
+              "activeReturn": 0.004388,
+              "totalAttribution": -0.004246
+            },
+            {
+              "segmentID": "Energy",
+              "selectionEffect": 0.011065,
+              "allocationEffect": 0.016361,
+              "activeReturn": 0.018068,
+              "totalAttribution": 0.027607
             }
           ]
         },
         {
           "effectiveDate": "2020-12-31",
-          "total_attribution_long": -0.057666219479491465,
-          "total_selection_effect_long": -0.03778837176060712,
-          "total_allocation_effect_long": -0.020658498749650867,
-          "total_active_return_long": -0.05677150658477492,
-          "segment_attributions_long": [
-            {
-              "segmentID": "Consumer Staples",
-              "selectionEffect": 0.007141462333522641,
-              "allocationEffect": 0.01232321899989497,
-              "activeReturn": 0.0064844340969427705,
-              "totalAttribution": 0.01232321899989497
-            },
+          "totalAttributionLong": -0.057666,
+          "totalSelectionEffectLong": -0.037788,
+          "totalAllocationEffectLong": -0.020658,
+          "totalActiveReturnLong": -0.056772,
+          "segmentAttributionsLong": [
             {
               "segmentID": "N.A.",
-              "selectionEffect": -0.00046848954557898725,
-              "allocationEffect": -0.0017439667936333114,
-              "activeReturn": -0.002711338799329388,
-              "totalAttribution": -0.0017439667936333114
+              "selectionEffect": -0.000468,
+              "allocationEffect": -0.001744,
+              "activeReturn": -0.002711,
+              "totalAttribution": -0.002212
             },
             {
               "segmentID": "Utilities",
-              "selectionEffect": -0.015565502195558412,
-              "allocationEffect": 0.011801144892466864,
-              "activeReturn": -0.012005890724778978,
-              "totalAttribution": 0.011801144892466864
-            },
-            {
-              "segmentID": "Health Care",
-              "selectionEffect": -0.006755719298546237,
-              "allocationEffect": -0.0004987553300995762,
-              "activeReturn": -0.012216918289991718,
-              "totalAttribution": -0.0004987553300995762
-            },
-            {
-              "segmentID": "Communication Services",
-              "selectionEffect": -0.012702257953152496,
-              "allocationEffect": 0.005981184258708083,
-              "activeReturn": -0.007460784376715379,
-              "totalAttribution": 0.005981184258708083
-            },
-            {
-              "segmentID": "Energy",
-              "selectionEffect": -0.010556158797173754,
-              "allocationEffect": 0.0033501470623755747,
-              "activeReturn": -0.003956916505882702,
-              "totalAttribution": 0.0033501470623755747
-            },
-            {
-              "segmentID": "Real Estate",
-              "selectionEffect": -0.00009959506565326848,
-              "allocationEffect": 0.0044878769931002704,
-              "activeReturn": 0.003252247371638761,
-              "totalAttribution": 0.0044878769931002704
+              "selectionEffect": -0.015566,
+              "allocationEffect": 0.011801,
+              "activeReturn": -0.012006,
+              "totalAttribution": -0.003948
             },
             {
               "segmentID": "Materials",
-              "selectionEffect": 0.010529968173405013,
-              "allocationEffect": -0.0015051680035002013,
-              "activeReturn": 0.029251116992566217,
-              "totalAttribution": -0.0015051680035002013
+              "selectionEffect": 0.01053,
+              "allocationEffect": -0.001505,
+              "activeReturn": 0.029251,
+              "totalAttribution": 0.009009
             },
             {
-              "segmentID": "Financials",
-              "selectionEffect": 0.00871078852882512,
-              "allocationEffect": -0.04474770924102356,
-              "activeReturn": -0.025114743261181016,
-              "totalAttribution": -0.04474770924102356
+              "segmentID": "Real Estate",
+              "selectionEffect": -0.0001,
+              "allocationEffect": 0.004488,
+              "activeReturn": 0.003252,
+              "totalAttribution": 0.004388
             },
             {
               "segmentID": "Consumer Discretionary",
-              "selectionEffect": 0.0011640785885642657,
-              "allocationEffect": 0.002534979526078951,
-              "activeReturn": -0.0002910154899177231,
-              "totalAttribution": 0.002534979526078951
+              "selectionEffect": 0.001164,
+              "allocationEffect": 0.002535,
+              "activeReturn": -0.000291,
+              "totalAttribution": 0.003702
             },
             {
-              "segmentID": "Industrials",
-              "selectionEffect": 0.018654321814738584,
-              "allocationEffect": 0.0014389191760966202,
-              "activeReturn": 0.004185569493830421,
-              "totalAttribution": 0.0014389191760966202
+              "segmentID": "Consumer Staples",
+              "selectionEffect": 0.007141,
+              "allocationEffect": 0.012323,
+              "activeReturn": 0.006484,
+              "totalAttribution": 0.019553
             },
             {
               "segmentID": "Information Technology",
-              "selectionEffect": -0.029925114162970945,
-              "allocationEffect": -0.012910349782394914,
-              "activeReturn": -0.02126647575600049,
-              "totalAttribution": -0.012910349782394914
+              "selectionEffect": -0.029925,
+              "allocationEffect": -0.01291,
+              "activeReturn": -0.021266,
+              "totalAttribution": -0.042449
+            },
+            {
+              "segmentID": "Financials",
+              "selectionEffect": 0.008711,
+              "allocationEffect": -0.044748,
+              "activeReturn": -0.025115,
+              "totalAttribution": -0.036427
+            },
+            {
+              "segmentID": "Health Care",
+              "selectionEffect": -0.006756,
+              "allocationEffect": -0.000499,
+              "activeReturn": -0.012217,
+              "totalAttribution": -0.007251
+            },
+            {
+              "segmentID": "Communication Services",
+              "selectionEffect": -0.012702,
+              "allocationEffect": 0.005981,
+              "activeReturn": -0.007461,
+              "totalAttribution": -0.006797
+            },
+            {
+              "segmentID": "Industrials",
+              "selectionEffect": 0.018654,
+              "allocationEffect": 0.001439,
+              "activeReturn": 0.004186,
+              "totalAttribution": 0.02012
+            },
+            {
+              "segmentID": "Energy",
+              "selectionEffect": -0.010556,
+              "allocationEffect": 0.00335,
+              "activeReturn": -0.003957,
+              "totalAttribution": -0.007241
             }
           ]
         },
         {
           "effectiveDate": "2015-12-31",
-          "total_attribution_long": 0.09199178245977202,
-          "total_selection_effect_long": 0.04960447520267808,
-          "total_allocation_effect_long": 0.04038407634352925,
-          "total_active_return_long": 0.0919917868768767,
-          "segment_attributions_long": [
-            {
-              "segmentID": "Consumer Staples",
-              "selectionEffect": 0.002211898854567629,
-              "allocationEffect": 0.010661350215268817,
-              "activeReturn": 0.006834965284329364,
-              "totalAttribution": 0.010661350215268817
-            },
+          "totalAttributionLong": 0.091992,
+          "totalSelectionEffectLong": 0.049604,
+          "totalAllocationEffectLong": 0.040384,
+          "totalActiveReturnLong": 0.091992,
+          "segmentAttributionsLong": [
             {
               "segmentID": "N.A.",
-              "selectionEffect": 0.0020543087701534457,
-              "allocationEffect": -0.002913356205915374,
-              "activeReturn": -0.0012555456157181677,
-              "totalAttribution": -0.002913356205915374
+              "selectionEffect": 0.002054,
+              "allocationEffect": -0.002913,
+              "activeReturn": -0.001256,
+              "totalAttribution": -0.000865
             },
             {
               "segmentID": "Utilities",
-              "selectionEffect": 0.007098482898834746,
-              "allocationEffect": -0.000587854185141623,
-              "activeReturn": 0.010827211518547708,
-              "totalAttribution": -0.000587854185141623
-            },
-            {
-              "segmentID": "Health Care",
-              "selectionEffect": -0.01620137613710604,
-              "allocationEffect": 0.02118764272019269,
-              "activeReturn": 0.0019939477298911434,
-              "totalAttribution": 0.02118764272019269
-            },
-            {
-              "segmentID": "Energy",
-              "selectionEffect": 0.005642804849701921,
-              "allocationEffect": 0.02605827060072352,
-              "activeReturn": 0.03545899185628332,
-              "totalAttribution": 0.02605827060072352
-            },
-            {
-              "segmentID": "Communication Services",
-              "selectionEffect": -0.0021049756812132614,
-              "allocationEffect": -0.006143796004049018,
-              "activeReturn": -0.009121746449763712,
-              "totalAttribution": -0.006143796004049018
-            },
-            {
-              "segmentID": "Real Estate",
-              "selectionEffect": 0.012310678375782258,
-              "allocationEffect": -0.0009520915536288532,
-              "activeReturn": 0.017279229747664715,
-              "totalAttribution": -0.0009520915536288532
+              "selectionEffect": 0.007098,
+              "allocationEffect": -0.000588,
+              "activeReturn": 0.010827,
+              "totalAttribution": 0.006506
             },
             {
               "segmentID": "Materials",
-              "selectionEffect": 0.011098889578126325,
-              "allocationEffect": 0.0016074542703048422,
-              "activeReturn": 0.0058817810136255755,
-              "totalAttribution": 0.0016074542703048422
+              "selectionEffect": 0.011099,
+              "allocationEffect": 0.001607,
+              "activeReturn": 0.005882,
+              "totalAttribution": 0.012724
             },
             {
-              "segmentID": "Financials",
-              "selectionEffect": 0.012515453099072094,
-              "allocationEffect": 0.0014655221757204906,
-              "activeReturn": 0.024822141581985813,
-              "totalAttribution": 0.0014655221757204906
-            },
-            {
-              "segmentID": "Consumer Discretionary",
-              "selectionEffect": -0.002190454176577483,
-              "allocationEffect": -0.001185225890781516,
-              "activeReturn": -0.009202285572032398,
-              "totalAttribution": -0.001185225890781516
+              "segmentID": "Real Estate",
+              "selectionEffect": 0.012311,
+              "allocationEffect": -0.000952,
+              "activeReturn": 0.017279,
+              "totalAttribution": 0.011347
             },
             {
               "segmentID": "Industrials",
-              "selectionEffect": 0.009394409138447024,
-              "allocationEffect": -0.003063468161971228,
-              "activeReturn": 0.010277656925693934,
-              "totalAttribution": -0.003063468161971228
+              "selectionEffect": 0.009394,
+              "allocationEffect": -0.003063,
+              "activeReturn": 0.010278,
+              "totalAttribution": 0.006302
+            },
+            {
+              "segmentID": "Consumer Discretionary",
+              "selectionEffect": -0.00219,
+              "allocationEffect": -0.001185,
+              "activeReturn": -0.009202,
+              "totalAttribution": -0.003373
+            },
+            {
+              "segmentID": "Consumer Staples",
+              "selectionEffect": 0.002212,
+              "allocationEffect": 0.010661,
+              "activeReturn": 0.006835,
+              "totalAttribution": 0.012897
             },
             {
               "segmentID": "Information Technology",
-              "selectionEffect": 0.00842934747689461,
-              "allocationEffect": -0.005605445084934324,
-              "activeReturn": -0.002869385797385493,
-              "totalAttribution": -0.005605445084934324
+              "selectionEffect": 0.008429,
+              "allocationEffect": -0.005605,
+              "activeReturn": -0.002869,
+              "totalAttribution": 0.002777
+            },
+            {
+              "segmentID": "Financials",
+              "selectionEffect": 0.012515,
+              "allocationEffect": 0.001466,
+              "activeReturn": 0.024822,
+              "totalAttribution": 0.013999
+            },
+            {
+              "segmentID": "Health Care",
+              "selectionEffect": -0.016201,
+              "allocationEffect": 0.021188,
+              "activeReturn": 0.001994,
+              "totalAttribution": 0.004643
+            },
+            {
+              "segmentID": "Communication Services",
+              "selectionEffect": -0.002105,
+              "allocationEffect": -0.006144,
+              "activeReturn": -0.009122,
+              "totalAttribution": -0.008236
+            },
+            {
+              "segmentID": "Energy",
+              "selectionEffect": 0.005643,
+              "allocationEffect": 0.026058,
+              "activeReturn": 0.035459,
+              "totalAttribution": 0.031848
             }
           ]
         },
         {
           "effectiveDate": "2016-12-31",
-          "total_attribution_long": 0.02718598535862915,
-          "total_selection_effect_long": 0.055604119321803314,
-          "total_allocation_effect_long": -0.026921204117156705,
-          "total_active_return_long": 0.027185988252625082,
-          "segment_attributions_long": [
-            {
-              "segmentID": "Consumer Staples",
-              "selectionEffect": 0.012705355423525688,
-              "allocationEffect": -0.006366654916831305,
-              "activeReturn": 0.0070665255563733265,
-              "totalAttribution": -0.006366654916831305
-            },
+          "totalAttributionLong": 0.027186,
+          "totalSelectionEffectLong": 0.055604,
+          "totalAllocationEffectLong": -0.026921,
+          "totalActiveReturnLong": 0.027186,
+          "segmentAttributionsLong": [
             {
               "segmentID": "N.A.",
-              "selectionEffect": -0.006792064261313402,
-              "allocationEffect": 0.004989829214960384,
-              "activeReturn": -0.0033326553649443147,
-              "totalAttribution": 0.004989829214960384
+              "selectionEffect": -0.006792,
+              "allocationEffect": 0.00499,
+              "activeReturn": -0.003333,
+              "totalAttribution": -0.001836
             },
             {
               "segmentID": "Utilities",
-              "selectionEffect": 0.02737212979259973,
-              "allocationEffect": -0.0064866725182244345,
-              "activeReturn": 0.012756035846628988,
-              "totalAttribution": -0.0064866725182244345
-            },
-            {
-              "segmentID": "Health Care",
-              "selectionEffect": 0.005109036042818094,
-              "allocationEffect": -0.008208870530417078,
-              "activeReturn": 0.00410480216669451,
-              "totalAttribution": -0.008208870530417078
-            },
-            {
-              "segmentID": "Communication Services",
-              "selectionEffect": -0.0007928380071272612,
-              "allocationEffect": 0.004695331286235227,
-              "activeReturn": -0.008623440946983751,
-              "totalAttribution": 0.004695331286235227
-            },
-            {
-              "segmentID": "Energy",
-              "selectionEffect": -0.0029323615767525846,
-              "allocationEffect": 0.010788226071294371,
-              "activeReturn": -0.0041964241112990575,
-              "totalAttribution": 0.010788226071294371
-            },
-            {
-              "segmentID": "Real Estate",
-              "selectionEffect": 0.012453256829063841,
-              "allocationEffect": -0.003486407029521743,
-              "activeReturn": 0.00736820002424321,
-              "totalAttribution": -0.003486407029521743
+              "selectionEffect": 0.027372,
+              "allocationEffect": -0.006487,
+              "activeReturn": 0.012756,
+              "totalAttribution": 0.020708
             },
             {
               "segmentID": "Materials",
-              "selectionEffect": -0.0039845178937713,
-              "allocationEffect": -0.008022851550275822,
-              "activeReturn": -0.016767634724450753,
-              "totalAttribution": -0.008022851550275822
+              "selectionEffect": -0.003985,
+              "allocationEffect": -0.008023,
+              "activeReturn": -0.016768,
+              "totalAttribution": -0.011975
             },
             {
-              "segmentID": "Financials",
-              "selectionEffect": 0.005069266986451604,
-              "allocationEffect": -0.00866789635323817,
-              "activeReturn": 0.006559508836895267,
-              "totalAttribution": -0.00866789635323817
-            },
-            {
-              "segmentID": "Consumer Discretionary",
-              "selectionEffect": -0.0046887333358052175,
-              "allocationEffect": 0.000595451010784176,
-              "activeReturn": -0.010910142320707639,
-              "totalAttribution": 0.000595451010784176
+              "segmentID": "Real Estate",
+              "selectionEffect": 0.012453,
+              "allocationEffect": -0.003486,
+              "activeReturn": 0.007368,
+              "totalAttribution": 0.008923
             },
             {
               "segmentID": "Industrials",
-              "selectionEffect": 0.011968073644806232,
-              "allocationEffect": -0.005951102178111123,
-              "activeReturn": 0.017081315809883035,
-              "totalAttribution": -0.005951102178111123
+              "selectionEffect": 0.011968,
+              "allocationEffect": -0.005951,
+              "activeReturn": 0.017081,
+              "totalAttribution": 0.005946
+            },
+            {
+              "segmentID": "Consumer Staples",
+              "selectionEffect": 0.012705,
+              "allocationEffect": -0.006367,
+              "activeReturn": 0.007067,
+              "totalAttribution": 0.006258
+            },
+            {
+              "segmentID": "Consumer Discretionary",
+              "selectionEffect": -0.004689,
+              "allocationEffect": 0.000595,
+              "activeReturn": -0.01091,
+              "totalAttribution": -0.004096
             },
             {
               "segmentID": "Information Technology",
-              "selectionEffect": 0.0021009519632357865,
-              "allocationEffect": -0.0009501455012701499,
-              "activeReturn": 0.016600586792737904,
-              "totalAttribution": -0.0009501455012701499
+              "selectionEffect": 0.002101,
+              "allocationEffect": -0.00095,
+              "activeReturn": 0.016601,
+              "totalAttribution": 0.001149
+            },
+            {
+              "segmentID": "Financials",
+              "selectionEffect": 0.005069,
+              "allocationEffect": -0.008668,
+              "activeReturn": 0.00656,
+              "totalAttribution": -0.003643
+            },
+            {
+              "segmentID": "Health Care",
+              "selectionEffect": 0.005109,
+              "allocationEffect": -0.008209,
+              "activeReturn": 0.004105,
+              "totalAttribution": -0.003142
+            },
+            {
+              "segmentID": "Communication Services",
+              "selectionEffect": -0.000793,
+              "allocationEffect": 0.004695,
+              "activeReturn": -0.008623,
+              "totalAttribution": 0.003899
+            },
+            {
+              "segmentID": "Energy",
+              "selectionEffect": -0.002932,
+              "allocationEffect": 0.010788,
+              "activeReturn": -0.004196,
+              "totalAttribution": 0.007824
             }
           ]
         },
         {
           "effectiveDate": "2017-12-31",
-          "total_attribution_long": 0.11386956748814536,
-          "total_selection_effect_long": 0.07501060393538261,
-          "total_allocation_effect_long": 0.0361475165086822,
-          "total_active_return_long": 0.11386956864939402,
-          "segment_attributions_long": [
-            {
-              "segmentID": "Consumer Staples",
-              "selectionEffect": -0.008748754435932926,
-              "allocationEffect": 0.006275304576116136,
-              "activeReturn": -0.0025442528408845533,
-              "totalAttribution": 0.006275304576116136
-            },
+          "totalAttributionLong": 0.11387,
+          "totalSelectionEffectLong": 0.075011,
+          "totalAllocationEffectLong": 0.036148,
+          "totalActiveReturnLong": 0.11387,
+          "segmentAttributionsLong": [
             {
               "segmentID": "N.A.",
-              "selectionEffect": 0.002331206841511557,
-              "allocationEffect": -0.0003793387288404393,
-              "activeReturn": 0.0013488060997619566,
-              "totalAttribution": -0.0003793387288404393
+              "selectionEffect": 0.002331,
+              "allocationEffect": -0.000379,
+              "activeReturn": 0.001349,
+              "totalAttribution": 0.001951
             },
             {
               "segmentID": "Utilities",
-              "selectionEffect": 0.003810677077767055,
-              "allocationEffect": 0.0005123909240691837,
-              "activeReturn": 0.0033155825517374726,
-              "totalAttribution": 0.0005123909240691837
-            },
-            {
-              "segmentID": "Health Care",
-              "selectionEffect": 0.031432449594984035,
-              "allocationEffect": -0.003279223732365888,
-              "activeReturn": 0.027641550946271964,
-              "totalAttribution": -0.003279223732365888
-            },
-            {
-              "segmentID": "Energy",
-              "selectionEffect": 0.008940470062299921,
-              "allocationEffect": 0.007869541601932761,
-              "activeReturn": 0.018914946256135767,
-              "totalAttribution": 0.007869541601932761
-            },
-            {
-              "segmentID": "Communication Services",
-              "selectionEffect": 0.01306948014830267,
-              "allocationEffect": 0.0011526918606454828,
-              "activeReturn": 0.01051153743342459,
-              "totalAttribution": 0.0011526918606454828
-            },
-            {
-              "segmentID": "Real Estate",
-              "selectionEffect": 0.0005323805105699186,
-              "allocationEffect": -0.000013157906671890096,
-              "activeReturn": -0.00022593117712521593,
-              "totalAttribution": -0.000013157906671890096
+              "selectionEffect": 0.003811,
+              "allocationEffect": 0.000512,
+              "activeReturn": 0.003316,
+              "totalAttribution": 0.004325
             },
             {
               "segmentID": "Materials",
-              "selectionEffect": -0.005440713246037343,
-              "allocationEffect": -0.004118242702168318,
-              "activeReturn": -0.011672664027034374,
-              "totalAttribution": -0.004118242702168318
+              "selectionEffect": -0.005441,
+              "allocationEffect": -0.004118,
+              "activeReturn": -0.011673,
+              "totalAttribution": -0.009537
             },
             {
-              "segmentID": "Financials",
-              "selectionEffect": -0.008199585226941974,
-              "allocationEffect": 0.007931227080903769,
-              "activeReturn": 0.0013977092768464594,
-              "totalAttribution": 0.007931227080903769
-            },
-            {
-              "segmentID": "Consumer Discretionary",
-              "selectionEffect": 0.024428609272440838,
-              "allocationEffect": 0.0009736989240782812,
-              "activeReturn": 0.024864712806645484,
-              "totalAttribution": 0.0009736989240782812
+              "segmentID": "Real Estate",
+              "selectionEffect": 0.000532,
+              "allocationEffect": -0.000013,
+              "activeReturn": -0.000226,
+              "totalAttribution": 0.000519
             },
             {
               "segmentID": "Industrials",
-              "selectionEffect": 0.008690532287630504,
-              "allocationEffect": -0.001780794088367288,
-              "activeReturn": 0.01207491227371138,
-              "totalAttribution": -0.001780794088367288
+              "selectionEffect": 0.008691,
+              "allocationEffect": -0.001781,
+              "activeReturn": 0.012075,
+              "totalAttribution": 0.006894
+            },
+            {
+              "segmentID": "Consumer Discretionary",
+              "selectionEffect": 0.024429,
+              "allocationEffect": 0.000974,
+              "activeReturn": 0.024865,
+              "totalAttribution": 0.025426
+            },
+            {
+              "segmentID": "Consumer Staples",
+              "selectionEffect": -0.008749,
+              "allocationEffect": 0.006275,
+              "activeReturn": -0.002544,
+              "totalAttribution": -0.002528
+            },
+            {
+              "segmentID": "Financials",
+              "selectionEffect": -0.0082,
+              "allocationEffect": 0.007931,
+              "activeReturn": 0.001398,
+              "totalAttribution": -0.000333
             },
             {
               "segmentID": "Information Technology",
-              "selectionEffect": 0.0030105212698994244,
-              "allocationEffect": 0.02070758476932477,
-              "activeReturn": 0.02317850526783194,
-              "totalAttribution": 0.02070758476932477
+              "selectionEffect": 0.003011,
+              "allocationEffect": 0.020708,
+              "activeReturn": 0.023179,
+              "totalAttribution": 0.02378
+            },
+            {
+              "segmentID": "Health Care",
+              "selectionEffect": 0.031432,
+              "allocationEffect": -0.003279,
+              "activeReturn": 0.027642,
+              "totalAttribution": 0.02805
+            },
+            {
+              "segmentID": "Communication Services",
+              "selectionEffect": 0.013069,
+              "allocationEffect": 0.001153,
+              "activeReturn": 0.010512,
+              "totalAttribution": 0.014237
+            },
+            {
+              "segmentID": "Energy",
+              "selectionEffect": 0.00894,
+              "allocationEffect": 0.00787,
+              "activeReturn": 0.018915,
+              "totalAttribution": 0.01688
             }
           ]
         },
         {
           "effectiveDate": "2018-12-31",
-          "total_attribution_long": 0.0905381776144023,
-          "total_selection_effect_long": 0.0641121778743583,
-          "total_allocation_effect_long": 0.02483384768026342,
-          "total_active_return_long": 0.09053818596024499,
-          "segment_attributions_long": [
-            {
-              "segmentID": "Consumer Staples",
-              "selectionEffect": -0.007905011374727988,
-              "allocationEffect": -0.0020656503668081694,
-              "activeReturn": -0.005186973352319213,
-              "totalAttribution": -0.0020656503668081694
-            },
+          "totalAttributionLong": 0.090538,
+          "totalSelectionEffectLong": 0.064112,
+          "totalAllocationEffectLong": 0.024834,
+          "totalActiveReturnLong": 0.090538,
+          "segmentAttributionsLong": [
             {
               "segmentID": "N.A.",
-              "selectionEffect": 0.0006909659478038233,
-              "allocationEffect": 0.00022417049675715894,
-              "activeReturn": 0.001149430204288704,
-              "totalAttribution": 0.00022417049675715894
+              "selectionEffect": 0.000691,
+              "allocationEffect": 0.000224,
+              "activeReturn": 0.001149,
+              "totalAttribution": 0.000915
             },
             {
               "segmentID": "Utilities",
-              "selectionEffect": 0.0019541650377676856,
-              "allocationEffect": -0.003988708519397588,
-              "activeReturn": -0.00406889937901278,
-              "totalAttribution": -0.003988708519397588
-            },
-            {
-              "segmentID": "Health Care",
-              "selectionEffect": 0.022060749289559922,
-              "allocationEffect": 0.006324161196201716,
-              "activeReturn": 0.021481076704509272,
-              "totalAttribution": 0.006324161196201716
-            },
-            {
-              "segmentID": "Communication Services",
-              "selectionEffect": 0.0076728423588809935,
-              "allocationEffect": 0.0050375078256972294,
-              "activeReturn": 0.013943224593404357,
-              "totalAttribution": 0.0050375078256972294
-            },
-            {
-              "segmentID": "Energy",
-              "selectionEffect": -0.00009964256936723093,
-              "allocationEffect": 0.015967786987788557,
-              "activeReturn": 0.011842549356448684,
-              "totalAttribution": 0.015967786987788557
-            },
-            {
-              "segmentID": "Real Estate",
-              "selectionEffect": 0.008183202063913875,
-              "allocationEffect": -0.00568183676490186,
-              "activeReturn": 0.0018042693267785737,
-              "totalAttribution": -0.00568183676490186
+              "selectionEffect": 0.001954,
+              "allocationEffect": -0.003989,
+              "activeReturn": -0.004069,
+              "totalAttribution": -0.002042
             },
             {
               "segmentID": "Materials",
-              "selectionEffect": -0.007854104495202185,
-              "allocationEffect": -0.0031959454824451727,
-              "activeReturn": -0.011057403657882547,
-              "totalAttribution": -0.0031959454824451727
+              "selectionEffect": -0.007854,
+              "allocationEffect": -0.003196,
+              "activeReturn": -0.011057,
+              "totalAttribution": -0.011025
             },
             {
-              "segmentID": "Financials",
-              "selectionEffect": 0.009347177409150698,
-              "allocationEffect": -0.00016744009075886357,
-              "activeReturn": 0.00012404820182432275,
-              "totalAttribution": -0.00016744009075886357
+              "segmentID": "Real Estate",
+              "selectionEffect": 0.008183,
+              "allocationEffect": -0.005682,
+              "activeReturn": 0.001804,
+              "totalAttribution": 0.002455
+            },
+            {
+              "segmentID": "Consumer Staples",
+              "selectionEffect": -0.007905,
+              "allocationEffect": -0.002066,
+              "activeReturn": -0.005187,
+              "totalAttribution": -0.009954
             },
             {
               "segmentID": "Consumer Discretionary",
-              "selectionEffect": -0.004158544788583574,
-              "allocationEffect": 0.004512207232412413,
-              "activeReturn": 0.01235039014408068,
-              "totalAttribution": 0.004512207232412413
+              "selectionEffect": -0.004159,
+              "allocationEffect": 0.004512,
+              "activeReturn": 0.01235,
+              "totalAttribution": 0.000335
             },
             {
-              "segmentID": "Industrials",
-              "selectionEffect": 0.007216654870449757,
-              "allocationEffect": -0.0003141314634705905,
-              "activeReturn": 0.022103265307943376,
-              "totalAttribution": -0.0003141314634705905
+              "segmentID": "Financials",
+              "selectionEffect": 0.009347,
+              "allocationEffect": -0.000167,
+              "activeReturn": 0.000124,
+              "totalAttribution": 0.009178
             },
             {
               "segmentID": "Information Technology",
-              "selectionEffect": 0.026131767923169402,
-              "allocationEffect": 0.00819921039398852,
-              "activeReturn": 0.025257601308350086,
-              "totalAttribution": 0.00819921039398852
+              "selectionEffect": 0.026132,
+              "allocationEffect": 0.008199,
+              "activeReturn": 0.025258,
+              "totalAttribution": 0.034545
+            },
+            {
+              "segmentID": "Health Care",
+              "selectionEffect": 0.022061,
+              "allocationEffect": 0.006324,
+              "activeReturn": 0.021481,
+              "totalAttribution": 0.028524
+            },
+            {
+              "segmentID": "Communication Services",
+              "selectionEffect": 0.007673,
+              "allocationEffect": 0.005038,
+              "activeReturn": 0.013943,
+              "totalAttribution": 0.012749
+            },
+            {
+              "segmentID": "Industrials",
+              "selectionEffect": 0.007217,
+              "allocationEffect": -0.000314,
+              "activeReturn": 0.022103,
+              "totalAttribution": 0.0069
+            },
+            {
+              "segmentID": "Energy",
+              "selectionEffect": -0.0001,
+              "allocationEffect": 0.015968,
+              "activeReturn": 0.011843,
+              "totalAttribution": 0.015867
+            }
+          ]
+        },
+        {
+          "effectiveDate": "2021-11-28",
+          "totalAttributionLong": 0.231524,
+          "totalSelectionEffectLong": 0.185585,
+          "totalAllocationEffectLong": 0.038748,
+          "totalActiveReturnLong": 0.231795,
+          "segmentAttributionsLong": [
+            {
+              "segmentID": "N.A.",
+              "selectionEffect": 0.000501,
+              "allocationEffect": 0.001183,
+              "activeReturn": 0.001101,
+              "totalAttribution": 0.001685
+            },
+            {
+              "segmentID": "Utilities",
+              "selectionEffect": -0.005192,
+              "allocationEffect": 0.007179,
+              "activeReturn": -0.003908,
+              "totalAttribution": 0.00195
+            },
+            {
+              "segmentID": "Materials",
+              "selectionEffect": 0.035781,
+              "allocationEffect": -0.002098,
+              "activeReturn": 0.033533,
+              "totalAttribution": 0.033608
+            },
+            {
+              "segmentID": "Real Estate",
+              "selectionEffect": 0.022208,
+              "allocationEffect": -0.01473,
+              "activeReturn": -0.000342,
+              "totalAttribution": 0.00715
+            },
+            {
+              "segmentID": "Consumer Discretionary",
+              "selectionEffect": 0.019838,
+              "allocationEffect": 0.004913,
+              "activeReturn": 0.029024,
+              "totalAttribution": 0.024848
+            },
+            {
+              "segmentID": "Consumer Staples",
+              "selectionEffect": 0.007602,
+              "allocationEffect": 0.007936,
+              "activeReturn": 0.014403,
+              "totalAttribution": 0.015599
+            },
+            {
+              "segmentID": "Financials",
+              "selectionEffect": 0.032779,
+              "allocationEffect": 0.03349,
+              "activeReturn": 0.057863,
+              "totalAttribution": 0.067366
+            },
+            {
+              "segmentID": "Information Technology",
+              "selectionEffect": 0.009474,
+              "allocationEffect": -0.00319,
+              "activeReturn": 0.013854,
+              "totalAttribution": 0.006253
+            },
+            {
+              "segmentID": "Health Care",
+              "selectionEffect": 0.004004,
+              "allocationEffect": 0.006076,
+              "activeReturn": 0.019413,
+              "totalAttribution": 0.010105
+            },
+            {
+              "segmentID": "Communication Services",
+              "selectionEffect": 0.00403,
+              "allocationEffect": -0.00085,
+              "activeReturn": 0.004478,
+              "totalAttribution": 0.003177
+            },
+            {
+              "segmentID": "Industrials",
+              "selectionEffect": 0.037768,
+              "allocationEffect": -0.005296,
+              "activeReturn": 0.033551,
+              "totalAttribution": 0.032271
+            },
+            {
+              "segmentID": "Energy",
+              "selectionEffect": 0.005886,
+              "allocationEffect": 0.004416,
+              "activeReturn": 0.009971,
+              "totalAttribution": 0.010328
             }
           ]
         }
-      ]
+      ],
+      "percentMissingDataReturns": 0,
+      "percentMissingDataSectors": 0,
+      "percentMissingDataCountries": 0
     }
   }
 }

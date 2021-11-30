@@ -158,6 +158,7 @@ export default {
         },
       ],
       branchName: '',
+      benchmarkName: ''
     };
   },
   computed: {
@@ -174,6 +175,7 @@ export default {
       handler(newVal)
       {
         this.branchName = newVal.data.attributionSectorAnnuallyMetrics.branchName;
+        this.benchmarkName = newVal.data.attributionSectorAnnuallyMetrics.benchmarkName;
         this.updateChart(this.wrangleData(newVal));
       }
     },
@@ -188,6 +190,7 @@ export default {
     // this executes when component is in dev mode. Since no resources will be selected, we need the mounted hook to call initChart
     if (this.dev) {
       this.branchName = testData.data.attributionSectorAnnuallyMetrics.branchName;
+      this.benchmarkName = testData.data.attributionSectorAnnuallyMetrics.benchmarkName;
       // wrangle data of static testing data object into chart ready format
       const wrangled = this.wrangleData(testData);
       this.updateChart(wrangled);
@@ -358,25 +361,25 @@ export default {
         // first create Totals
         result['Attribution']['Total att.'].push({
           x: info.effectiveDate,
-          value: info.total_attribution_long,
+          value: info.totalAttributionLong,
           effect: 'Att.',
           sector: 'Total att.',
         });
         result['Selection effect']['Total att.'].push({
           x: info.effectiveDate,
-          value: info.total_selection_effect_long,
+          value: info.totalSelectionEffectLong,
           effect: 'Sel. eff.',
           sector: 'Total att.',
         });
         result['Allocation effect']['Total att.'].push({
           x: info.effectiveDate,
-          value: info.total_allocation_effect_long,
+          value: info.totalAllocationEffectLong,
           effect: 'All. eff.',
           sector: 'Total att.',
         });
 
         // then iterate over other segments
-        info.segment_attributions_long.forEach(contrib =>
+        info.segmentAttributionsLong.forEach(contrib =>
         {
           if (!result['Attribution'][contrib.segmentID])
           {
@@ -408,7 +411,7 @@ export default {
     },
     updateChart(data)
     {
-      this.chartTitle.text = this.branchName + ' Attribution';
+      this.chartTitle.text = this.branchName + ' vs ' + this.benchmarkName + ' Attribution';
       const series = this.chart.series;
       // we have to reset the series - because we do not recreate the chart when updating the values (to speedup the things a little)
       while (series.length > 0) series.removeIndex(0).dispose();
