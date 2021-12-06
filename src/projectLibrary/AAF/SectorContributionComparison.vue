@@ -111,7 +111,8 @@ export default {
       chart: null,
       legend: null, // sectors
       legendTwo: null, // branches
-      activeSector: null, // it stores the corresponding LegendDataItem
+      dimmedSectors: {},
+      dimmedBranches: {},
       zoomBtns: [
         {
           label: '1wk',
@@ -261,7 +262,7 @@ export default {
       // define "active" state
       let as = marker.states.create('active');
       as.properties.fillOpacity = 0.1;
-      const labelTemplate = legend.labels.template;
+      let labelTemplate = legend.labels.template;
       labelTemplate.fillOpacity = 1;
       as = labelTemplate.states.create('active');
       as.properties.fillOpacity = 0.6;
@@ -278,10 +279,24 @@ export default {
       legend.position = 'bottom';
       legend.itemContainers.template.togglable = false;
       legend.useDefaultMarker = true;
+
+      // toggle kinds
+      legend.itemContainers.template.events.on("hit", (ev) =>
+      {
+        this.toggleBranch(ev.target.dataItem);
+      });
+
       markerTemplate = legend.markers.template;
       markerTemplate.disposeChildren();
       markerTemplate.width = 35;
       markerTemplate.height = 16;
+
+      // define "active" state
+      labelTemplate = legend.labels.template;
+      labelTemplate.fillOpacity = 1;
+      as = labelTemplate.states.create('active');
+      as.properties.fillOpacity = 0.5;
+
       // add custom Sprite
       const dash = markerTemplate.createChild(am4core.Line);
       dash.width = 35;
@@ -341,6 +356,9 @@ export default {
       while (series.length > 0) series.removeIndex(0).dispose();
       // clear the legend
       this.legend.data = [];
+      this.legendTwo.data = [];
+      this.dimmedSectors = {};
+      this.dimmedBranches = {};
 
       const legendItems = {};
       const branchItems = [];
@@ -348,20 +366,18 @@ export default {
       Object.keys(data).forEach((branch, bIndex) =>
       {
         const branchNode = data[branch];
+        branchItems.push({
+          name: branch,
+          stroke: am4core.color('#111'),
+          dash: dashPatterns[bIndex],
+        });
         Object.keys(branchNode).forEach((sector, sIndex) =>
         {
-          const seria = this.createSeries(bIndex, branch, sIndex, sector, branchNode[sector].sort((a, b) => a.x < b.x ? -1 : a.x > b.x ? +1 : 0)); // we must sort data points by date, because amCharts does not do it for us
+          this.createSeries(bIndex, branch, sIndex, sector, branchNode[sector].sort((a, b) => a.x < b.x ? -1 : a.x > b.x ? +1 : 0)); // we must sort data points by date, because amCharts does not do it for us
           if (!legendItems[sector]) legendItems[sector] = {
             name: sector,
             fill: am4core.color(paletteAdobe[sIndex % paletteAdobe.length]),
-            branches: {},
           };
-          legendItems[sector].branches[branch] = seria;
-        });
-        branchItems.push({
-          name: branch,
-          stroke: am4core.color('#C0C0C0'),
-          dash: dashPatterns[bIndex],
         });
       });
       this.legend.data = Object.values(legendItems); // sectors
@@ -384,12 +400,11 @@ export default {
         const currentSeries = target.tooltipDataItem;
         const idx = currentSeries.index;
         // don't show tooltip for dimmed series or series from a sector which is different from the currently hovered
-        if (idx < 0 || (this.activeSector && target.tooltipDataItem.sector !== this.activeSector.dataContext.name)) return '';
-        const activeSector = this.activeSector;
+        if (idx < 0) return '';
         let text = "<table><thead><tr><th style='padding: 0;'>Branch</th><th style='padding: 0 5px;'>Sector</th><th style='padding: 0;'>Contribution</th></tr></thead><tbody>";
         this.chart.series.each(item =>
         {
-          if (!item.isActive && (activeSector ? true : currentSeries.sector === item.sector))
+          if (!item.isActive && currentSeries.sector === item.sector)
           {
             text += '<tr><td style="padding: 0; color:' + item.stroke.hex + ';">' +
                     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 10" width="28" height="16" style="vertical-align: middle;">' +
@@ -422,14 +437,16 @@ export default {
       segment.events.on('hit', (ev) =>
       {
         const series = ev.target.dataItem.component.tooltipDataItem;
-        const legendIndex = this.legend.data.findIndex(item => item.name === series.sector);
+        let legendIndex = this.legend.data.findIndex(item => item.name === series.sector);
         this.toggleSector(this.legend.data[legendIndex].legendDataItem);
+        legendIndex = this.legendTwo.data.findIndex(item => item.name === series.branch);
+        this.toggleBranch(this.legendTwo.data[legendIndex].legendDataItem);
       });
 
       // "active" is actually used for dimming, while "standout" makes the lines thicker
       let hs = segment.states.create("active");
-      hs.properties.strokeOpacity = 0.2;
-      hs.properties.strokeWidth = 2;
+      hs.properties.strokeOpacity = 0.15;
+      hs.properties.strokeWidth = 1;
       hs = segment.states.create('standout');
       hs.properties.strokeWidth = 5;
 
@@ -452,67 +469,33 @@ export default {
     },
     toggleSector(legendItem)
     {
-      if (legendItem.toggled)
+      this.updateLegend(legendItem, this.dimmedSectors);
+    },
+    toggleBranch(legendItem)
+    {
+      this.updateLegend(legendItem, this.dimmedBranches);
+    },
+    updateLegend(item, dimmedList)
+    {
+      const active = item.toggled = !item.toggled;
+      item.marker.isActive = active;
+      item.label.isActive = active;
+      dimmedList[item.dataContext.name] = active;
+      this.updateDimming();
+    },
+    updateDimming()
+    {
+      this.chart.series.each(series =>
       {
-        this.activeSector = null;
-        // restore all sectors
-        legendItem.toggled = false;
-        this.legend.dataItems.each(item =>
+        const dimmed = this.dimmedSectors[series.sector] || this.dimmedBranches[series.branch];
+        series[dimmed ? 'hide' : 'show']();
+        series.bullets.getIndex(0).visible = !dimmed;
+        series.segments.each(segment =>
         {
-          item.marker.isActive = false;
-          item.label.isActive = false;
-          Object.values(item.dataContext.branches).forEach(series =>
-          {
-            series.isActive = false;
-            series.bullets.getIndex(0).visible = true;
-            series.segments.each(segment =>
-            {
-              segment.isActive = false;
-              segment.setState('default'); // remove standout
-            });
-          });
+          segment[dimmed ? 'hide' : 'show']();
         });
-      }
-      else
-      {
-        this.activeSector = legendItem;
-        // dim all other sectors
-        this.legend.dataItems.each(item =>
-        {
-          if (item !== legendItem)
-          {
-            item.toggled = false;
-            item.marker.isActive = true;
-            item.label.isActive = true;
-            Object.values(item.dataContext.branches).forEach(series =>
-            {
-              series.isActive = true;
-              series.bullets.getIndex(0).visible = false;
-              series.segments.each(segment =>
-              {
-                segment.isActive = true;
-              });
-            });
-          }
-          else
-          {
-            item.toggled = true;
-            item.marker.isActive = false;
-            item.label.isActive = false;
-            Object.values(item.dataContext.branches).forEach(series =>
-            {
-              series.isActive = false;
-              series.bullets.getIndex(0).visible = true;
-              series.segments.each(segment =>
-              {
-                segment.isActive = false;
-                segment.setState('standout');
-              });
-            });
-          }
-        });
-      }
-    }
+      });
+    },
   },
 };
 </script>
