@@ -1,6 +1,3 @@
-## Vue Component Template
-This repo serves as a library for all components built for alis_ technologies LLC. Please feel to look through the components created for alis_ to get inspiration from different projects. You will be able to browse different projects in the component library table. After development, you will then add your project to the library table, which will allow you to showcase your work, and alis_ to access your work easily. 
-
 **Technologies** you will be using within the repo
 <details open>
   <summary><b>Front end</b></summary>
