@@ -1,7 +1,3 @@
-<img width="45%" src="./src/assets/logo.gif" alt="alis_ investments" />
-
-# Hi, welcome to alis_ templates  <img width="24px" src="https://media.tenor.com/images/f580b40a349dcb2d7cb93573e2329061/tenor.gif">
-
 ## Vue Component Template
 This repo serves as a library for all components built for alis_ technologies LLC. Please feel to look through the components created for alis_ to get inspiration from different projects. You will be able to browse different projects in the component library table. After development, you will then add your project to the library table, which will allow you to showcase your work, and alis_ to access your work easily. 
 
